@@ -13,7 +13,7 @@
 
 In a few sentences, describe your final project. This abstract will be used as the description in the evaluation survey forms.
 
-Micro Music is a music recorder and speaker that provides awesome multi-colored music visualization using LED strips. Enhance your music listening experience with Micro Music!
+Micro Music is a music recorder, amplifier, and playback device that provides awesome multi-colored music visualization using LED strips. Enhance your music listening experience with Micro Music!
 
 ### 2. Motivation
 
