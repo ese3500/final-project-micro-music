@@ -19,6 +19,8 @@ A music recorder and speaker that uses LED strips to provide multi-colored music
 
 What is the problem that you are trying to solve? Why is this project interesting? What is the intended purpose?
 
+Most speakers don't provide audio visualization, and audio visualization software is oftentimes proprietary and expensive. Our device offers a cheap alternative for people who would like to immerse themselves in the music they love both audibly and visually, without having to go through the hassle of buying software or expensive products.
+
 ### 3. Goals
 
 These are to help guide and direct your progress.
