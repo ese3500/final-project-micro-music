@@ -42,7 +42,6 @@ These are to help guide and direct your progress.
 
 ### 4. Software Requirements Specification (SRS)
 
-Formulate key software requirements here.
 
 ### 5. Hardware Requirements Specification (HRS)
 
