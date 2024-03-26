@@ -61,7 +61,7 @@ If the program is in recording mode (it is saving the audio signals into an audi
 
 When the program is playing a saved audio file, the audio data shall be sent from the memory device to the AtMega328PB via a JTAG port, where its amplitude and frequency can be outputted to the speaker pin via a sine wave to play the audio. The audio data read from the memory device should be saved in a buffer on the AtMega328PB, so the audio data can be read efficiently while not using up all of the AtMega328PB's memory.
 
-The program shall display a selection of saved audio files on an LCD screen, and allow the user to interact the LCD screen using buttons and pin change interrupts.
+The program shall display a selection of saved audio files on an LCD screen, and allow the user to interact with the LCD screen using buttons and pin change interrupts.
 
 ### 5. Hardware Requirements Specification (HRS)
 
