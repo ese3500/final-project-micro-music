@@ -32,13 +32,13 @@ What is the problem that you are trying to solve? Why is this project interestin
 
 These are to help guide and direct your progress.
 
-<ol>
-   <li>Record music and save into a playable audio file that can be played later</li>
-   <li>Amplify music in real time</li>
-   <li>Play music at a variety of volumes through a speaker</li>
-   <li>Provide music visualization features through LED strips</li>
-   <li>Ensure the device is cheap and portable</li>
-</ol>
+      <ol>
+         <li>Record music and save into a playable audio file that can be played later</li>
+         <li>Amplify music in real time</li>
+         <li>Play music at a variety of volumes through a speaker</li>
+         <li>Provide music visualization features through LED strips</li>
+         <li>Ensure the device is cheap and portable</li>
+      </ol>
 
 ### 4. Software Requirements Specification (SRS)
      
