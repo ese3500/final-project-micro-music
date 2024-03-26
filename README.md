@@ -42,20 +42,18 @@ and how we simulate the frequency. We have the option of storing the sound throu
 
 From the software pesrpective, we also set the pins to a speaker to high to allow it to reproduce the sound.
 
- USERS 
+USERS
 
-         The users of this technology are music producers who want to enhance their sounds, store files, and have a realistic
-         visual output of the sound they create. 
+The users of this technology are music producers who want to enhance their sounds, store files, and have a realistic
+visual output of the sound they create. 
 
 Definition of Terms
      
-      JTAG 
+JTAG 
 
-      Joint Test Action Grop
+Joint Test Action Grop
+
          
-
-      
-
 ### 5. Hardware Requirements Specification (HRS)
 
 Formulate key hardware requirements here.
