@@ -134,6 +134,8 @@ The second metric is sound quality on a scale of 1-10. We want to make sure the 
 
 The third and final metric is cost. While the device doesn't need to be extremely cheap, we want to make sure that the device is cheaper than most speakers. Therefore, we want the total price of the device to be less than 30 dollars.
 
+The one metric for evaluating our solution is the average of these, where the cost is either 10 or 0 (10 if its under 30 dollars and 0 if its at 30 or over). Hopefully, we can achieve a metric of 30.
+
 ### 11. Timeline
 
 This section is to help guide your progress over the next few weeks. Feel free to adjust and edit the table below to something that would be useful to you. Really think about what you want to accomplish by the first milestone.
