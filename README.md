@@ -101,6 +101,8 @@ This section is to help guide your progress over the next few weeks. Feel free t
 
 Add your slides to the Final Project Proposal slide deck in the Google Drive.
 
+https://docs.google.com/presentation/d/1Cn8vNzp07OBihLg25p4tsMr9FRUsMsbQ/edit?usp=sharing&ouid=101561420450155736831&rtpof=true&sd=true
+
 ## Final Project Report
 
 Don't forget to make the GitHub pages public website!
