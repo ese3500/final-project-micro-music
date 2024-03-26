@@ -41,7 +41,18 @@ These are to help guide and direct your progress.
 </ol>
 
 ### 4. Software Requirements Specification (SRS)
+     
+         The program will take input audio data from a microphone. The program take the input only when a 
+         pulldown resistor is set on the microphone (it uses a pin change interrupt from a button to accomplish this). 
+         
+         Once the program successfully inputs data, we call a sampling subroutine to convert the analog sound into 
+         an amplitude and a frequency. We then use the values of the amplitude and frequency to control how many LEDs should be set on,
+         and how we simulate the frequency. We have the option of storing the sound through using a JTAG port, to a memory device. 
+         
+         From the software pesrpective, we also set the pins to a speaker to high to allow it to reproduce the sound.
 
+
+      
 
 ### 5. Hardware Requirements Specification (HRS)
 
