@@ -60,8 +60,8 @@ Formulate key hardware requirements here.
 
 What do you expect to accomplish by the first milestone?
 
-By the first milestone, we expect to have all necessary components ordered. This includes the microphone, speaker, LED strips, and other components like knobs and buttons for volume control. 
-We expect to implement real-time audio visualization and amplification by the first milestone. When music is played into the device's microphone, it should be able to output the audio signals through the LED strips and the speaker. We also hope to have implemented adjustable volume control and some visualization options (colors, patterns, etc.). Also, we expect to have obtained and properly modified a container so it can house all the circuitry and sensors as well as the knobs and buttons for volume control, recording music, selecting music files, etc..
+By the first milestone, we expect to have all the necessary components ordered. This includes the microphone, speaker, LED strips, and other components like knobs and buttons for volume control. 
+We expect to have implemented real-time audio visualization and amplification by the first milestone. When music is played into the device's microphone, it should be able to output the audio signals through the LED strips and the speaker. We also hope to have implemented adjustable volume control and some visualization options (colors, patterns, etc.). Also, we expect to have obtained and properly modified a container so it can house all the circuitry and sensors as well as the knobs and buttons for volume control, recording music, selecting music files, etc..
 
 ### 7. Final Demo
 
