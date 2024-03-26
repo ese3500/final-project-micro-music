@@ -42,6 +42,17 @@ and how we simulate the frequency. We have the option of storing the sound throu
 
 From the software pesrpective, we also set the pins to a speaker to high to allow it to reproduce the sound.
 
+ USERS 
+
+         The users of this technology are music producers who want to enhance their sounds, store files, and have a realistic
+         visual output of the sound they create. 
+
+Definition of Terms
+     
+      JTAG 
+
+      Joint Test Action Grop
+         
 
       
 
