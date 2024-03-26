@@ -129,11 +129,11 @@ The metric will be the sum of the below three metrics:
 
 The first metric is audio visualization quality on a scale of 1-10. We want to make sure the audio visualization experience allows the user immerse themselves in the music in another dimension. While this can't be determined objectively, we can rank it on a scale of 1-10 based on the device playing songs that we like. We could also ask other people to play songs they like on the device and rank the visualization feature from 1 to 10.
 
-The second metric is sound quality on a scale of 1-10. We want to make sure the audio being outputted from the device is similar in quality to the audio being read through the microphone. Additionally, the sound should complement the audio visualization feature really well, which would mean that the audio quality needs to be match the visualization quality. We will rank this on a scale of 1-10 based on the device playing songs that we like. Like the previous metric, we can ask other people to rank from sound quality from 1 to 10.
+The second metric is sound quality on a scale of 1-10. We want to make sure the audio being outputted from the device is similar in quality to the audio being read through the microphone. Additionally, the sound should complement the audio visualization feature really well, which would mean that the audio quality needs to match the visualization quality. We will rank this on a scale of 1-10 based on the device playing songs that we like. Like the previous metric, we can ask other people to rank from sound quality from 1 to 10.
 
-The third and final metric is cost. While the device doesn't need to be extremely cheap, we want to make sure that the device is cheaper than most speakers. Therefore, we want the total price of the device to be less than 30 dollars.
+The third and final metric is cost. While the device doesn't need to be extremely cheap, we want to make sure that the device is cheaper than most speakers. Therefore, we want the total price of the device to be less than 40 dollars.
 
-The one metric for evaluating our solution is the sum of these three metrics, where the cost is either 10 or 0 (10 if its under 30 dollars and 0 if its at 30 or over). Hopefully, we can achieve a metric of 30.
+The one metric for evaluating our solution is the sum of these three metrics, where the cost metric is either 10 or 0 (10 if its under 40 dollars and 0 if its at 40 or over). Hopefully, we can achieve a metric of 30.
 
 ### 11. Timeline
 
