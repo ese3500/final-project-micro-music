@@ -134,13 +134,13 @@ The third and final metric is cost. While the device doesn't need to be extremel
 
 This section is to help guide your progress over the next few weeks. Feel free to adjust and edit the table below to something that would be useful to you. Really think about what you want to accomplish by the first milestone.
 
-| **Week**            | **Task** | **Assigned To**    |
-|----------           |--------- |------------------- |
-| Week 1: 3/24 - 3/31 |          |                    |
-| Week 2: 4/1 - 4/7   |          |                    |
-| Week 3: 4/8 - 4/14  |          |                    |
-| Week 4: 4/15 - 4/21 |          |                    |
-| Week 5: 4/22 - 4/26 |          |                    |
+| **Week**            | **Task**                                                                  | **Assigned To**    |
+|---------------------|---------------------------------------------------------------------------|--------------------|
+| Week 1: 3/24 - 3/31 | Order parts                                                               | Nhlanhla and Tim   |
+| Week 2: 4/1 - 4/7   | Implement microphone and ADC and real-time playback                       | Tim                |
+| Week 3: 4/8 - 4/14  | Implement real-time audio visualization using LEDs                        | Nhlanhla           |
+| Week 4: 4/15 - 4/21 | Implement reading writing audio data to memory device for recording audio | Nhlanhla and Tim   |
+| Week 5: 4/22 - 4/26 | Implement LCD and integrate all components into one device (container)    | Nhlanhla and Tim   |
 
 ### 12. Proposal Presentation
 
