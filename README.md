@@ -33,7 +33,7 @@ These are to help guide and direct your progress.
 
 #### Overview
 
-The software will process the input audio signals from the microphone and ouput the signals through the LED strips and the speaker. It should also be able to store the audio data in an external memory device and read from the memory device to play the audio data on the speaker. Finally, the software should take user input via buttons and potentiometers so the user can interact with the LCD screen.
+The software will process the input audio signals from the microphone and ouput the signals through the LED strips and the speaker. It should also be able to store the audio data in an external memory device and read from the memory device to play the audio data on the speaker. Finally, the software should be able to write to an LCD screen and take user input via buttons and potentiometers so the user can interact with the LCD screen.
 
 #### Users
 
