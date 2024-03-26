@@ -66,7 +66,7 @@ By the first milestone, we expect to have all the necessary components ordered. 
 
 What do you expect to achieve by the final demonstration or after milestone 1?
 
-By the final demonstration, we expect have implemented the audio recording and file storage features. This should allow the user to press a button to start recording, play audio into the microphone of the device, and then stop recording and save the file. Then, through an LCD screen, the user should be able to select and play their desired music files through the speaker and LED light strips. Because the memory space on the AtMega328PB is limited, we will use some external memory storage that the AtMega328PB can send audio data to and read audio data from. We also expected to have fitted everything into the container with all the knobs, sensors, and LED light strips integrated for the user to use.  
+By the final demonstration, we expect have implemented the audio recording and file storage features. This should allow the user to press a button to start recording, play audio into the microphone of the device, and then stop recording and save the file. Then, through an LCD screen, the user should be able to select and play their desired music files through the speaker and LED light strips. Because the memory space on the AtMega328PB is limited, we will use some external memory storage that the AtMega328PB can send audio data to and read audio data from. We also expect to have fitted all the components (MCU, speaker, microphone, LED strips, circuit parts) into the container with all the user interaction parts (knobs, sensors, and LED light strips) integrated for the user to easily use.  
 
 ### 8. Methodology
 
