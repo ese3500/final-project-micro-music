@@ -75,7 +75,11 @@ By the final demonstration, we expect have implemented the audio recording and f
 
 ### 8. Methodology
 
-What is your approach to the problem?
+First, we will outline our design in both software and hardware. For software, we will discuss how each feature will be implemented using software such as recording audio, storing audio, reading audio data, outputting audio etc.. We also will defined how the software in the AtMega328PB will interface with peripherals such as the external memory storage device, the microphone, speaker, LED light strips, etc.. This will require reading the datasheets of the various peripherals we have sourced and planning how the AtMega can properly interface with them using polling/interrupts. For hardware, we plan to draw a circuit schematic outlining all the wire connections between the AtMega328PB and peripherals.
+
+Next, after the planning stage, we will implement one feature at a time. The first feature will be reading in audio using the microphone and then amplifying it through the speaker, with adjustable volume control using a potentiometer. The next feature will be providing audio visualization through the LED strips. Next, we will implement the feature of recording music and storing the audio data on an external memory storage device. Lastly, we will implement reading from the external memory storage device to play music files through the speaker and the LED light strips. Each feature will hopefully a few days to a week to implement. 
+
+Finally, once all the features are implemented, we will start to integrate the components into the container that will house everything. This will involve a lot of testing and assembling. By the end, we should have a completed audio recording, amplifying, and playback speaker that provides cool visualization features.
 
 ### 9. Components
 
