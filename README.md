@@ -11,13 +11,11 @@
 
 ### 1. Abstract
 
-Micro Music is a music recorder, amplifier, and playback device that provides awesome multi-colored music visualization using LED strips. Enhance your music listening experience with Micro Music! We want to design a highly-differential music box with state of the art music production capablities.  We will use a microphone to take sound as an input from a user, then uses the most advanced Digital Signal Processing (DSP) to sample the sound into frequency and amplitude. We use the sound to amplify the sound, which will be outputted in a speaker. We are also excited to be able to synthesize a realistic visualization of the sound in an array of LED strips.
+Micro Music is a music recorder, amplifier, and playback speaker that provides awesome multi-colored music visualization using LED strips. Enhance your music listening experience with Micro Music! We will design a highly-differential music box with state of the art music production capablities.  We will use a microphone to take sound as an input from a user, then uses the most advanced Digital Signal Processing (DSP) to sample the sound into frequency and amplitude. We use the sound to amplify the sound, which will be outputted in a speaker. We are also excited to be able to synthesize a realistic visualization of the sound in an array of LED strips.
 
 ### 2. Motivation
 
-Most speakers don't provide audio visualization features, and audio visualization software is oftentimes proprietary and expensive. 
-Our device offers a cheap alternative for people who would like to immerse themselves in their music both audibly and visually, 
-without having to go through the hassle of buying software or expensive products.
+Most speakers don't provide audio visualization features, and audio visualization software is oftentimes proprietary and expensive. Our device offers a cheap alternative for people who would like to immerse themselves in their music both audibly and visually, without having to go through the hassle of buying software or expensive products.
 
 ### 3. Goals
 
