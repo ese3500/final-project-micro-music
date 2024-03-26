@@ -31,30 +31,41 @@ These are to help guide and direct your progress.
 
 ### 4. Software Requirements Specification (SRS)
 
-The program will take input audio data from a microphone. The program take the input only when a 
-pulldown resistor is set on the microphone (it uses a pin change interrupt from a button to accomplish this). 
+#### Overview
 
-Once the program successfully inputs data, we call a sampling subroutine to convert the analog sound into 
-an amplitude and a frequency. We then use the values of the amplitude and frequency to control how many LEDs should be set on,
-and how we simulate the frequency. We have the option of storing the sound through using a JTAG port, to a memory device. 
 
-From the software pesrpective, we also set the pins to a speaker to high to allow it to reproduce the sound.
 
-USERS
+#### Users
 
-The users of this technology are music producers who want to enhance their sounds, store files, and have a realistic
-visual output of the sound they create. 
+The users of this technology include music producers who want to enhance their sounds, store files, and have a realistic visual output of the sound they create. Users could also include music enjoyers who want to better immerse themselves in the music they like.
 
-Definition of Terms
+#### Definitions and Abbreviations
      
-JTAG 
+JTAG - Joint Test Action Grop
 
-Joint Test Action Grop
+#### Functionality
 
+The program shall take input audio data from an ADC that is connected to the microphone. 
+
+The program shall take the input only when a pulldown resistor is set on the microphone (it uses a pin change interrupt from a button to accomplish this).
+
+The program shall call a sampling subroutine to convert the analog sound into an amplitude and a frequency.
+
+If the program is in real-time mode (it outputs the audio signals as they are being inputted), the values of the amplitude and frequency shall be used to control how many LEDs should be set on, and how we simulate the frequency. The program shall output amplitude and frequency in the form of a sine wave to the speaker through the speaker pin so the audio signal can be amplified. The sine wave should be generated using a timer in PWM mode and a low pass filter or a software-generated sine wave using a look-up table.
+
+If the program is in recording mode (it is saving the audio signals into an audio file), the audio data should be sent through using a JTAG port to a memory device.
+
+When the program is playing a saved audio file, the audio data shall be sent from the memory device to the AtMega328PB via a JTAG port, where its amplitude and frequency can be outputted to the speaker pin via a sine wave to play the audio. The audio data read from the memory device should be saved in a buffer on the AtMega328PB, so the audio data can be read efficiently while not using up all of the AtMega's memory.
          
 ### 5. Hardware Requirements Specification (HRS)
 
+#### Overview
 
+#### Users 
+
+#### Definitions and Abbreviations
+
+#### Functionality
 
 ### 6. MVP Demo
 
