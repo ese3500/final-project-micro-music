@@ -43,6 +43,10 @@ The users of this technology include music producers who want to enhance their s
      
 JTAG - Joint Test Action Group
 
+ADC - Analog to Digital Converter
+
+LCD - Liquid Crystal Display
+
 #### Functionality
 
 The program shall take input audio data from an ADC that is connected to the microphone. 
