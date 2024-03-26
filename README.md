@@ -67,7 +67,9 @@ The hardware components should be able to convert audio signals into electrical 
 
 #### Definitions and Abbreviations
 
+ADC - Analog to Digital Converter
 
+LCD - Liquid Crystal Display
 
 #### Functionality
 
