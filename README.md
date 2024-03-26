@@ -5,7 +5,7 @@
     * Team Members: Nhlanhla Mavuso and Tim Liang
     * Github Repository URL: https://github.com/orgs/ese3500/teams/micro-music
     * Github Pages Website URL: [for final submission]
-    * Description of hardware: AtMega328PB, Microphone, Speaker, LED strips
+    * Description of hardware: AtMega328PB, Microphone, Speaker, LED strips, External Memory Device, LCD Screen
 
 ## Final Project Proposal
 
