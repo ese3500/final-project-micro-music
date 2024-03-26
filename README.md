@@ -128,13 +128,15 @@ The LCD screen given in Lab 4 will be utilized so the user can see which songs a
 What is your metric for evaluating how well your product/solution solves the problem? Think critically on this section. Having a boolean metric such as “it works” is not very useful. This is akin to making a speaker and if it emits sound, albeit however terrible and ear wrenching, declare this a success.
 It is recommended that your project be something that you can take pride in. Oftentimes in interviews, you will be asked to talk about projects you have worked on.
 
+The metric will be the sum of the below three metrics:
+
 The first metric is audio visualization quality on a scale of 1-10. We want to make sure the audio visualization experience allows the user immerse themselves in the music in another dimension. While this can't be objectively, we can rank it on a scale of 1-10 based on the device playing songs that we like. We could also ask other people to play songs they like on the device and rank the visualization feature from 1 to 10.
 
 The second metric is sound quality on a scale of 1-10. We want to make sure the audio being outputted from the device is similar in quality to the audio being read through the microphone. Additionally, the sound should complement the audio visualization feature really well, which would mean that the audio quality needs to be match the visualization quality. We will rank this on a scale of 1-10 based on the device playing songs that we like. Like the previous metric, we can ask other people to rank from sound quality from 1 to 10.
 
 The third and final metric is cost. While the device doesn't need to be extremely cheap, we want to make sure that the device is cheaper than most speakers. Therefore, we want the total price of the device to be less than 30 dollars.
 
-The one metric for evaluating our solution is the average of these, where the cost is either 10 or 0 (10 if its under 30 dollars and 0 if its at 30 or over). Hopefully, we can achieve a metric of 30.
+The one metric for evaluating our solution is the sum of these three metrics, where the cost is either 10 or 0 (10 if its under 30 dollars and 0 if its at 30 or over). Hopefully, we can achieve a metric of 30.
 
 ### 11. Timeline
 
