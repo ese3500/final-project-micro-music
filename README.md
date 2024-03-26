@@ -51,7 +51,7 @@ Formulate key hardware requirements here.
 
 What do you expect to accomplish by the first milestone?
 
-      We expect to implement real-time audio visualization and amplification by the first milestone. When music is played into the device's microphone, it should be able to output the audio signals using LED strips and the the speaker. We also hope to have implemented adjustable volume control and some visualization options (colors, patterns, etc.)
+      We expect to implement real-time audio visualization and amplification by the first milestone. When music is played into the device's microphone, it should be able to output the audio             signals using LED strips and the the speaker. We also hope to have implemented adjustable volume control and some visualization options (colors, patterns, etc.)
 
 ### 7. Final Demo
 
