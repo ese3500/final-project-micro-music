@@ -13,12 +13,7 @@
 
 In a few sentences, describe your final project. This abstract will be used as the description in the evaluation survey forms.
 
-Micro Music is a music recorder, amplifier, and playback device that provides awesome multi-colored music visualization using LED strips. Enhance your music listening experience with Micro Music!
-
-    We design a highly-differential music box with state of the art music production capablities. 
-      We use a microphone to take sound as an input from a user, then uses the most advanced Digital Signal Processing (DSP) 
-      to sample the sound into frequency and amplitude. We use the sound to amplify the sound, which will be outputted in a speaker. 
-      We are also excited to be able to synthesize a realistic visualization of the sound in an array of LED strips.
+Micro Music is a music recorder, amplifier, and playback device that provides awesome multi-colored music visualization using LED strips. Enhance your music listening experience with Micro Music! We want to design a highly-differential music box with state of the art music production capablities.  We will use a microphone to take sound as an input from a user, then uses the most advanced Digital Signal Processing (DSP) to sample the sound into frequency and amplitude. We use the sound to amplify the sound, which will be outputted in a speaker. We are also excited to be able to synthesize a realistic visualization of the sound in an array of LED strips.
 
 ### 2. Motivation
 
@@ -32,13 +27,13 @@ What is the problem that you are trying to solve? Why is this project interestin
 
 These are to help guide and direct your progress.
 
-      <ol>
-         <li>Record music and save into a playable audio file that can be played later</li>
-         <li>Amplify music in real time</li>
-         <li>Play music at a variety of volumes through a speaker</li>
-         <li>Provide music visualization features through LED strips</li>
-         <li>Ensure the device is cheap and portable</li>
-      </ol>
+<ol>
+   <li>Record music and save into a playable audio file that can be played later</li>
+   <li>Amplify music in real time</li>
+   <li>Play music at a variety of volumes through a speaker</li>
+   <li>Provide music visualization features through LED strips</li>
+   <li>Ensure the device is cheap and portable</li>
+</ol>
 
 ### 4. Software Requirements Specification (SRS)
      
