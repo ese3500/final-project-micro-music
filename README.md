@@ -121,7 +121,7 @@ Next, LED strips will be used to provide music visualization. We plan to line up
 
 An external memory storage device is needed so the AtMega can read and write audio files without filling up its own memory. The external memory storage device should be able to quickly and efficiently interface with the AtMega328PB via some form of serial communication (UART, I2C, etc.). Additionally, the storage device should hold enough memory to store a few audio files (5-10) so the user has plenty of songs to play.
 
-The LCD screen given in Lab 4 will be utilized so the user can see which songs are stored on the device, select songs to play, and do other basic functions with the device. Other components such as push buttons and potentiometer knobs will also be used to allow the user to interact with the LCD screen. Finally, passive components such as resistors, capacitors, and inductors will be used when needed in the circuitry.
+The LCD screen given in Lab 4 will be utilized so the user can see which songs are stored on the device, select songs to play, and do other basic functions with the device. Other components such as push buttons and potentiometer knobs will also be used to allow the user to interact with the LCD screen and adjust volume. Finally, passive components such as resistors, capacitors, and inductors will be used when needed in the circuitry.
 
 ### 10. Evaluation
 
