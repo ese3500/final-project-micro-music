@@ -125,9 +125,6 @@ The LCD screen given in Lab 4 will be utilized so the user can see which songs a
 
 ### 10. Evaluation
 
-What is your metric for evaluating how well your product/solution solves the problem? Think critically on this section. Having a boolean metric such as “it works” is not very useful. This is akin to making a speaker and if it emits sound, albeit however terrible and ear wrenching, declare this a success.
-It is recommended that your project be something that you can take pride in. Oftentimes in interviews, you will be asked to talk about projects you have worked on.
-
 The metric will be the sum of the below three metrics:
 
 The first metric is audio visualization quality on a scale of 1-10. We want to make sure the audio visualization experience allows the user immerse themselves in the music in another dimension. While this can't be objectively, we can rank it on a scale of 1-10 based on the device playing songs that we like. We could also ask other people to play songs they like on the device and rank the visualization feature from 1 to 10.
