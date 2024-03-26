@@ -22,7 +22,7 @@ Most speakers don't provide audio visualization features, and audio visualizatio
 These are to help guide and direct your progress.
 
 <ol>
-   <li>Record music and save into a playable audio file that can be played later</li>
+   <li>Record music and save it into a playable audio file that can be played later</li>
    <li>Amplify music in real time</li>
    <li>Play music at a variety of volumes through a speaker</li>
    <li>Provide music visualization features through LED strips</li>
