@@ -54,15 +54,7 @@ Joint Test Action Grop
          
 ### 5. Hardware Requirements Specification (HRS)
 
-A microphone that can convert an audio signal into an electrical signal between 0V and 5V is needed to enable the AtMega328PB to read audio signals using its ADC. The microphone is preferably not too big (in the order of a few centimeters in size). Also, the microphone should be good quality, as in it can capture sounds with very high accuracy.
 
-Additionally, a speaker is needed to output amplified music. The speaker should be able to output high volume sounds (so the user can really immerse themselves). Also, the speaker should be of high quality for user enjoyment. The speaker needs to operate between 0 and 5V so it can interface with the AtMega328PB.
-
-Next, LED strips will be used to provide music visualization. We plan to line up multiple LED strips to create an 2D screen of lights, which can then be programmed to output the corresponding audio signals in a cool way. The LED strips should be able to interface with the AtMega328PB, so we can program them to provide audio visualization functionality. Additionally, the strips shouldn't be too long, as we only need a few centimeters of each strip to create a small 2D screen of LEDs. Finally, the LED strips should be using its own power source, which should be battery powered so the entire system is portable.
-
-An external memory storage device is needed so the AtMega can read and write audio files without filling up its own memory. The external memory storage device should be able to quickly and efficiently interface with the AtMega328PB via some form of serial communication (UART, I2C, etc.). Additionally, the storage device should hold enough memory to store a few audio files (5-10) so the user has plenty of songs to play.
-
-The LCD screen given in Lab 4 will be utilized so the user can see which songs are stored on the device, select songs to play, and do other basic functions with the device. Other components such as push buttons and potentiometer knobs will also be used to allow the user to interact with the LCD screen. Finally, passive components such as resistors, capacitors, and inductors will be used when needed in the circuitry.
 
 ### 6. MVP Demo
 
@@ -86,7 +78,15 @@ Finally, once all the features are implemented, we will start to integrate the c
 
 ### 9. Components
 
-What major components do you need and why?
+A microphone that can convert an audio signal into an electrical signal between 0V and 5V is needed to enable the AtMega328PB to read audio signals using its ADC. The microphone is preferably not too big (in the order of a few centimeters in size). Also, the microphone should be good quality, as in it can capture sounds with very high accuracy.
+
+Additionally, a speaker is needed to output amplified music. The speaker should be able to output high volume sounds (so the user can really immerse themselves). Also, the speaker should be of high quality for user enjoyment. The speaker needs to operate between 0 and 5V so it can interface with the AtMega328PB.
+
+Next, LED strips will be used to provide music visualization. We plan to line up multiple LED strips to create an 2D screen of lights, which can then be programmed to output the corresponding audio signals in a cool way. The LED strips should be able to interface with the AtMega328PB, so we can program them to provide audio visualization functionality. Additionally, the strips shouldn't be too long, as we only need a few centimeters of each strip to create a small 2D screen of LEDs. Finally, the LED strips should be using its own power source, which should be battery powered so the entire system is portable.
+
+An external memory storage device is needed so the AtMega can read and write audio files without filling up its own memory. The external memory storage device should be able to quickly and efficiently interface with the AtMega328PB via some form of serial communication (UART, I2C, etc.). Additionally, the storage device should hold enough memory to store a few audio files (5-10) so the user has plenty of songs to play.
+
+The LCD screen given in Lab 4 will be utilized so the user can see which songs are stored on the device, select songs to play, and do other basic functions with the device. Other components such as push buttons and potentiometer knobs will also be used to allow the user to interact with the LCD screen. Finally, passive components such as resistors, capacitors, and inductors will be used when needed in the circuitry.
 
 ### 10. Evaluation
 
