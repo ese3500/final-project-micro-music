@@ -23,46 +23,41 @@ void Initialize()
 	
 	// ADC configuration
 	PRR0 &= ~(1<<PRADC);
-	
 	ADMUX |= (1<<REFS0);
 	ADMUX &= ~(1<<REFS1);
-	
 	ADCSRA |= (1<<ADPS0);
 	ADCSRA |= (1<<ADPS1);
 	ADCSRA &= ~(1<<ADPS2);
-	
 	ADMUX &= ~(1<<MUX0);
 	ADMUX &= ~(1<<MUX1);
 	ADMUX &= ~(1<<MUX2);
 	ADMUX &= ~(1<<MUX3);
-	
 	ADCSRA |= (1<<ADATE);
-	
 	ADCSRB &= ~(1<<ADTS0);
 	ADCSRB &= ~(1<<ADTS1);
 	ADCSRB &= ~(1<<ADTS2);
-	
 	DIDR0 |= (1<<ADC0D);
-	
 	ADCSRA |= (1<<ADEN);
-	
 	ADCSRA |= (1<<ADSC);
+
 	sei();
 }
 
+// cloning an array (not needed for now)
 void clone(int* clonedArr[], int* arr[]) {
-	// cloning an array (not needed for now)
 	for (int i = 0; i < 64; i++) {
 		clonedArr[i] = arr[64];
 	}
 }
 
+// FFT (convert from time domain to frequency domain)
 void fft(int* amplitudes[]) {
-	// FFT (convert from time domain to frequency domain)
+	// TODO
 }
 
+// send an array of 8-bit integers via SPI
 void send(int* arr[]) {
-	// send arr via SPI
+	// TODO
 }
 
 int main(void)
