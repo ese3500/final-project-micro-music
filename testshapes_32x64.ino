@@ -13,9 +13,13 @@
 // these pins are an example, you may modify this according to your needs
 P3RGB64x32MatrixPanel matrix(25, 26, 27, 21, 22, 23, 15, 32, 33, 12, 16, 17, 18, false);
 
-int prevHeights[8];
-int heights[8];
+int prevHeights[16];
+int heights[16];
 char string[10];
+
+int r = 0;
+int g = 0;
+int b = 15;
 
 // ESP32SPISlave slave;
 
@@ -93,6 +97,28 @@ const uint16_t sineLookupTables[][65] = {
 int pixelVals[64];
 */
 
+/*
+void IRAM_ATTR ISR() {
+    matrix.fillScreen(matrix.color444(0, 0, 0));
+}
+
+void IRAM_ATTR isr2() {
+  if (r == 15 && g == 0 && b == 0) {
+    r = 0;
+    g = 15;
+  } else if (r == 0 && g == 15 && b == 0) {
+    r = 15;
+    b = 15;
+  } else if (r == 0 && g == 0 && b == 15) {
+    b = 0;
+    r = 15;
+  } else if (r == 15 && g == 15 && b == 15) {
+    r = 0;
+    g = 0;
+  }
+}
+*/
+
 void setup() {
   // configure SPI
   /*
@@ -101,41 +127,44 @@ void setup() {
   */
   Serial2.begin(1000000, SERIAL_8N2, 14);
   Serial.begin(9600);
-
+  pinMode(39, INPUT);
+  /*
+  attachInterrupt(39, ISR, FALLING);
+  attachInterrupt(4, isr2, FALLING);
+  */
   // configure LCD graphics library
   matrix.begin();
 }
 
 void loop() {
   if (Serial2.find('x')) {
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 16; i++) {
       while (Serial2.available() == 0);
       int height = Serial2.read() - '0';
       if (height <= 9) {
         heights[i] = height;
       }
     }
-
     /*
-    for (int i = 0; i < 8; i++) {
+    for (int i = 0; i < 16; i++) {
       sprintf(string, "%d ", heights[i]);
       Serial.print(string);
     }
     Serial.println();
     */
-    for (int i = 2; i < 8; i++) {
-      if (prevHeights[i] == 0 && heights[i] >= 4) {
-        heights[i] = 0;
-      }
-    }
-    for (int i = 0; i < 8; i++) {
+
+    for (int i = 0; i < 16; i++) {
       // normalize
       heights[i] = (heights[i] * 31) / 9;
 
+      if (i >= 2 && abs(heights[i] - prevHeights[i]) >= 15) {
+        continue;
+      }
+
       if (heights[i] > prevHeights[i]) {
-        matrix.fillRect(i * 8, 31 - heights[i], 7, heights[i] - prevHeights[i], matrix.color444(15, 15, 15));
+        matrix.fillRect(i * 2, 31 - heights[i], 2, heights[i] - prevHeights[i] + 1, matrix.color444(r, g, b));
       } else if (heights[i] < prevHeights[i]) {
-        matrix.fillRect(i * 8, 31 - prevHeights[i], 7, prevHeights[i] - heights[i], matrix.color444(0, 0, 0));
+        matrix.fillRect(i * 2, 31 - prevHeights[i], 2, prevHeights[i] - heights[i] + 1, matrix.color444(0, 0, 0));
       }
       prevHeights[i] = heights[i];
     }
