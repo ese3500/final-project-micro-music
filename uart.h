@@ -7,6 +7,4 @@ void UART_send( unsigned char data);
 
 void UART_putstring(char* StringPtr);
 
-unsigned char USART_Receive( void );
-
 #endif 

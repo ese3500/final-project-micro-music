@@ -5,7 +5,6 @@
 
 void UART_init(int BAUD_PRESCALER)
 {
-  
   /*Set baud rate */
   UBRR1H = (unsigned char)(BAUD_PRESCALER>>8);
   UBRR1L = (unsigned char)BAUD_PRESCALER;
@@ -32,13 +31,4 @@ void UART_putstring(char* StringPtr)
 		UART_send(*StringPtr);
 		StringPtr++;
 	}
-}
-
-unsigned char USART_Receive( void )
-{
-	/* Wait for data to be received */
-	while ( !(UCSR1A & (1<<RXC1)) )
-	;
-	/* Get and return received data from buffer */
-	return UDR1;
 }

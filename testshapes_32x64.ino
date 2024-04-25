@@ -2,6 +2,8 @@
 
 #include <Adafruit_GFX.h>  // Core graphics library
 #include "P3RGB64x32MatrixPanel.h"
+#include <arduinoFFT.h>
+// #include <ESP32SPISlave.h>
 //#include "P3RGB64x32MatrixPanel.cpp"
 
 // constructor with default pin wiring
@@ -11,6 +13,13 @@
 // these pins are an example, you may modify this according to your needs
 P3RGB64x32MatrixPanel matrix(25, 26, 27, 21, 22, 23, 15, 32, 33, 12, 16, 17, 18, false);
 
+int prevHeights[8];
+int heights[8];
+char string[10];
+
+// ESP32SPISlave slave;
+
+/*
 int i = 0;
 
 int mode = 0;
@@ -82,51 +91,54 @@ const uint16_t sineLookupTables[][65] = {
 };
 
 int pixelVals[64];
+*/
 
 void setup() {
-  pinMode(19, INPUT);
+  // configure SPI
+  /*
+  slave.setDataMode(SPI_MODE0, 5, 19, 18, 33);
+  slave.begin();
+  */
   Serial2.begin(1000000, SERIAL_8N2, 14);
+  Serial.begin(9600);
+
+  // configure LCD graphics library
   matrix.begin();
 }
 
 void loop() {
-  // get frequency
-  if (digitalRead(19) != mode) {
-    matrix.fillScreen(matrix.color444(0,0,0));
-    mode = !mode;
-  }
-
-  char buffer[10];
-  int length = Serial2.readBytesUntil('x', buffer, -1);
-  int pos = 0;
-  for (int i = 0; i < length; i++) {
-    int digit = buffer[i] - '0';
-    pos = (pos * 10) + digit;
-  }
-  if (mode) {
-    if (pos > 61) {
-      pos = 61;
-    }
-    int sineFreq = 61 - pos;
-
-    int numInCycle = 0;
-    while (numInCycle < sineFreq) {
-      if (i > 63) {
-        i = 0;
+  if (Serial2.find('x')) {
+    for (int i = 0; i < 8; i++) {
+      while (Serial2.available() == 0);
+      int height = Serial2.read() - '0';
+      if (height <= 9) {
+        heights[i] = height;
       }
-      matrix.drawPixel(i, pixelVals[i], matrix.color444(0, 0, 0));
-      int newVal = sineLookupTables[sineFreq][numInCycle];
-      matrix.drawPixel(i, newVal, matrix.color444(15, 15, 15));
-      pixelVals[i] = newVal;
-      numInCycle++;
-      i++;
     }
-  } else {
-    int newPosition = pos;
-    if (newPosition != position) {
-      matrix.fillRect(position, 10, 1, 32, matrix.color444(0, 0, 0));
-      matrix.fillRect(newPosition, 10, 1, 32, matrix.color444(15, 15, 15));
-      position = newPosition;
+
+    /*
+    for (int i = 0; i < 8; i++) {
+      sprintf(string, "%d ", heights[i]);
+      Serial.print(string);
+    }
+    Serial.println();
+    */
+    for (int i = 2; i < 8; i++) {
+      if (prevHeights[i] == 0 && heights[i] >= 4) {
+        heights[i] = 0;
+      }
+    }
+    for (int i = 0; i < 8; i++) {
+      // normalize
+      heights[i] = (heights[i] * 31) / 9;
+
+      if (heights[i] > prevHeights[i]) {
+        matrix.fillRect(i * 8, 31 - heights[i], 7, heights[i] - prevHeights[i], matrix.color444(15, 15, 15));
+      } else if (heights[i] < prevHeights[i]) {
+        matrix.fillRect(i * 8, 31 - prevHeights[i], 7, prevHeights[i] - heights[i], matrix.color444(0, 0, 0));
+      }
+      prevHeights[i] = heights[i];
     }
   }
+
 }
