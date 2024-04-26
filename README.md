@@ -11,11 +11,12 @@
 
 ### 1. Abstract
 
-Micro Music is a group at the University of Pennsylvania that produces the most capable music recorder with an amplifier and playback speaker, that is interfaced with a multicolored LED matrix for sound visualization. Micro-music is committed in providing the best music sampling, amplification, and playback using the cutting edge FPGA and Microcontroller Technology. Enhance your music listening experience with Micro Music! We have designed a highly-differentiated music box with state of the art music production capablities.  The device uses a microphone to sample sound from a user, and use  Digital Signal Processing (DSP) embedded in an FPGA to sample the sound into frequency and amplitude. The music box uses an amplifier to play back the sound through two speakers. In addition to sound playback, we also show a visualization of the sound through LED matrix. 
+Micro Music is a group at the University of Pennsylvania that produces the most capable music recorder with an amplifier and playback speaker, that is interfaced with a multicolored LED matrix for sound visualization. Micro-music is committed in providing the best music sampling, amplification, and playback using the cutting edge FPGA and Microcontroller Technology. A user can choose to record any sounds in 16 banks, which they can choos to play at the same time.  Enhance your music listening experience with Micro Music! We have designed a highly-differentiated music box with state of the art music production capablities.  The device uses a microphone to sample sound from a user, and use  Digital Signal Processing (DSP) embedded in an FPGA to sample the sound into frequency and amplitude. The music box uses an amplifier to play back the sound through two speakers. In addition to sound playback, we also show a visualization of the sound through LED matrix. 
 
 ### 2. Motivation
 
-Most speakers don't provide audio visualization features, and audio visualization software is oftentimes proprietary and expensive. Our device offers a cheap alternative for people who would like to immerse themselves in their music both audibly and visually, without having to go through the hassle of buying software or expensive products.
+Micro-music is deeply invested in improving the recording, playback, and visualization capababilities at a very low cost, to provide music producers the ability to produce any music of their choice without the burden of cost and energy usage. Using a low-powered ATMEGA328PB microcontroller and a 7-series FPGA, we are confident in our ability to improve and shape the recording, playback, and visualization opportunities in the music industry. Micro-music is the change that is needed to accelerate the music industry - and we know it will. 
+
 
 ### 3. Goals
 
