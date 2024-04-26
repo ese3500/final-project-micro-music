@@ -5,13 +5,13 @@
     * Team Members: Nhlanhla Mavuso and Tim Liang
     * Github Repository URL: https://github.com/orgs/ese3500/teams/micro-music
     * Github Pages Website URL: [for final submission]
-    * Description of hardware: AtMega328PB, Microphone, Speaker, LED strips, ESP32, Raspberry PI, remote control
+    * Description of hardware: AtMega328PB, Microphone, Speaker, 64 X 32 LED Matrix, ESP32, Artix-7 Nexys Video FPGA
 
 ## Final Project Proposal
 
 ### 1. Abstract
 
-Micro Music is a music recorder, amplifier, and playback speaker that provides awesome multi-colored music visualization using LED strips. Enhance your music listening experience with Micro Music! We will design a highly-differential music box with state of the art music production capablities.  The device will use a microphone to take sound as an input from a user, then use the most advanced Digital Signal Processing (DSP) to sample the sound into frequency and amplitude. The device can then amplify the sound, which will be outputted in a speaker. We are also excited to be able to synthesize a realistic visualization of the sound in an array of LED strips.
+Micro Music is a group at the University of Pennsylvania that produces the most capable music recorder with an amplifier and playback speaker, that is interfaced with a multicolored LED matrix for sound visualization. Micro-music is committed in providing the best music sampling, amplification, and playback using the cutting edge FPGA and Microcontroller Technology. Enhance your music listening experience with Micro Music! We have designed a highly-differentiated music box with state of the art music production capablities.  The device uses a microphone to sample sound from a user, and use  Digital Signal Processing (DSP) embedded in an FPGA to sample the sound into frequency and amplitude. The music box uses an amplifier to play back the sound through two speakers. In addition to sound playback, we also show a visualization of the sound through LED matrix. 
 
 ### 2. Motivation
 
