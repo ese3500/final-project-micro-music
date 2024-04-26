@@ -97,12 +97,15 @@ const uint16_t sineLookupTables[][65] = {
 int pixelVals[64];
 */
 
-/*
 void IRAM_ATTR ISR() {
     matrix.fillScreen(matrix.color444(0, 0, 0));
 }
 
 void IRAM_ATTR isr2() {
+  matrix.fillScreen(matrix.color444(0, 0, 0));
+  for (int i = 0; i < 16; i++) {
+    prevHeights[i] = 0;
+  }
   if (r == 15 && g == 0 && b == 0) {
     r = 0;
     g = 15;
@@ -117,7 +120,6 @@ void IRAM_ATTR isr2() {
     g = 0;
   }
 }
-*/
 
 void setup() {
   // configure SPI
@@ -128,10 +130,8 @@ void setup() {
   Serial2.begin(1000000, SERIAL_8N2, 14);
   Serial.begin(9600);
   pinMode(39, INPUT);
-  /*
   attachInterrupt(39, ISR, FALLING);
   attachInterrupt(4, isr2, FALLING);
-  */
   // configure LCD graphics library
   matrix.begin();
 }
@@ -156,15 +156,14 @@ void loop() {
     for (int i = 0; i < 16; i++) {
       // normalize
       heights[i] = (heights[i] * 31) / 9;
-
-      if (i >= 2 && abs(heights[i] - prevHeights[i]) >= 15) {
+      if ((heights[i] - prevHeights[i]) >= 25) {
         continue;
       }
 
       if (heights[i] > prevHeights[i]) {
-        matrix.fillRect(i * 2, 31 - heights[i], 2, heights[i] - prevHeights[i] + 1, matrix.color444(r, g, b));
+        matrix.fillRect(i * 4, 31 - heights[i], 1, heights[i] - prevHeights[i] + 1, matrix.color444(r, g, b));
       } else if (heights[i] < prevHeights[i]) {
-        matrix.fillRect(i * 2, 31 - prevHeights[i], 2, prevHeights[i] - heights[i] + 1, matrix.color444(0, 0, 0));
+        matrix.fillRect(i * 4, 31 - prevHeights[i], 1, prevHeights[i] - heights[i] + 1, matrix.color444(0, 0, 0));
       }
       prevHeights[i] = heights[i];
     }
