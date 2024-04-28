@@ -1,8 +1,10 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2TmiRqwI)
 # Micro-Music - Differentiated Music Box 
 
+<p align="center">
 ![image](https://github.com/ese3500/final-project-micro-music/assets/141350627/6d1c46c9-b75c-4a31-94e2-a3871cc74250)
 
+</p>
 
     * Team Name: Micro Music
     * Team Members: Nhlanhla Mavuso and Tim Liang
