@@ -150,12 +150,13 @@ Don't forget to make the GitHub pages public website!
 If you’ve never made a Github pages website before, you can follow this webpage (though, substitute your final project repository for the Github username one in the quickstart guide):  <https://docs.github.com/en/pages/quickstart>
 
 ### 1. Video
-
-[Insert final project video here]
+(https://youtu.be/_2FNFVjFbK0)
 
 ### 2. Images
 
 [Insert final project images here]
+![image](https://github.com/ese3500/final-project-micro-music/assets/141350627/2a752ccd-b297-40b8-8c8a-ba9ee18d7ca4)
+
 
 ### 3. Results
 
