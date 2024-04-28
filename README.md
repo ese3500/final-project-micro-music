@@ -3,8 +3,12 @@
 
 <p align="center">
 ![image](https://github.com/ese3500/final-project-micro-music/assets/141350627/6d1c46c9-b75c-4a31-94e2-a3871cc74250)
-
 </p>
+
+<div style="text-align: center;">
+  ![image](https://github.com/ese3500/final-project-micro-music/assets/141350627/6d1c46c9-b75c-4a31-94e2-a3871cc74250)
+</div>
+
 
     * Team Name: Micro Music
     * Team Members: Nhlanhla Mavuso and Tim Liang
