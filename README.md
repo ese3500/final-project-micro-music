@@ -1,7 +1,7 @@
 [![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/2TmiRqwI)
 # Micro-Music - Differentiated Music Box 
 
-![image](https://github.com/ese3500/final-project-micro-music/assets/141350627/6d1c46c9-b75c-4a31-94e2-a3871cc74250)
+
 
 
 
@@ -10,6 +10,8 @@
     * Github Repository URL: https://github.com/orgs/ese3500/teams/micro-music
     * Github Pages Website URL: [for final submission]
     * Description of hardware: AtMega328PB, Microphone, Speaker, 64 X 32 LED Matrix, ESP32, Artix-7 Nexys Video FPGA
+
+![image](https://github.com/ese3500/final-project-micro-music/assets/141350627/6d1c46c9-b75c-4a31-94e2-a3871cc74250)
 
 ## Final Project Proposal
 
