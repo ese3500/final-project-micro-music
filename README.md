@@ -33,7 +33,7 @@ These are to help guide and direct your progress.
    <li>Amplify music using volume control and a speaker in real time</li>
    <li>Provide music visualization features through LED strips</li>
    <li>Ensure the device is cheap and portable</li>
-   <li>Ensure the device is user-friendly by making the buttons, screen UI, and knobs very intuitive to use</li>
+   <li>Ensure the device is user-friendly by making the buttons, and knobs very intuitive to use</li>
 </ol>
 
 ### 4. Software Requirements Specification (SRS)
