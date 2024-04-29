@@ -43,7 +43,7 @@ These are to help guide and direct your progress.
 The software processes the input audio signals from the microphone and ouput the signals through the LED strips and speakers. It also allows the music to be stored in any of the 16 banks of a DRAM. The software allows the user to change the visualization color and mode using interrupts. 
 #### Users
 
-Users should include music enjoyers who want to better immerse themselves in the music they like.
+Our target users are music producers who want to enhance their music production experiences. Anyone who is interested in listening to music, recording, and audio visualization will find our product a close companion. 
 
 #### Definitions and Abbreviations
 
