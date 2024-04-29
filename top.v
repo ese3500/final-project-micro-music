@@ -3,7 +3,7 @@
  /* Last modified in 4/29/2024
 /************************************************************************/
 
-module main_audio_controller (
+module top (
 
     input BTNC,
     input CLK100MHZ, 
