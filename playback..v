@@ -235,3 +235,265 @@ module playback(
     ); 
 
 endmodule
+
+module control(
+    input clk,
+    input rst, 
+    input btn, 
+    output reg [15:0] playing, 
+    output reg [15:0] recording,
+    output reg [15:0] active, 
+    output reg [3:0] bank,
+    input [21:0] current_address
+    );
+    
+    reg state; 
+    localparam DEFAULT = 4'd0;
+    localparam PLAY = 4'd1; 
+    localparam RECORD = 4'd2;
+    localparam BUTTON = 4'd3; 
+ 
+    /*
+        Finite State machine 
+    */
+    
+    always @(posedge clk) begin 
+        if (rst) begin
+            state <= DEFAULT; 
+            active <= 4'd0; 
+            playing <= 0; 
+            recording <= 0; 
+            bank <= 3'd0; 
+        end else begin 
+        case (state) 
+        
+            DEFAULT: begin 
+                if (btn)begin 
+                    state <= RECORD; 
+                end 
+            end 
+            
+            BUTTON: begin 
+               if (btn == 0) 
+                    state <= DEFAULT; 
+            end
+            
+            PLAY: begin 
+                playing[bank] <= 1;
+                
+                if (btn == 0) begin 
+       //             state <= nstate; 
+                end
+            end 
+            
+            RECORD: begin 
+                recording[bank] <= 1;
+                playing[bank] <= 0; 
+            end 
+        endcase
+       end 
+    end 
+endmodule
+
+module audio(
+    input wire clk, 
+    input rst, 
+    inout serial_clk, 
+    inout serial_data
+    );
+    
+    localparam RegAddr1 = 4'd0;
+    localparam RegAddr2 = 4'd1;
+    localparam Data1 = 4'd2; 
+    localparam Data2 = 4'd3; 
+    localparam Error = 4'd4; 
+    localparam Done = 4'd5;
+    localparam Idle = 4'd6;
+    localparam Delay = 4'd7;
+    localparam second = 4'd8;
+    
+    parameter init_vectors = 10; 
+    parameter initialize_read = 1'b1;
+    parameter initialize_write = 1'b0; 
+    parameter delay = 30000; 
+    
+    reg [3:0] state = Idle; 
+    reg [32:0] initial_word;
+    reg init_Enable;
+    reg init_Fb_We;
+    reg [6:0] init_A = 0;
+    
+    always @(posedge clk) begin 
+        case (init_A)
+            0: initial_word <= {initialize_write,31'h40150100};
+            1: initial_word <= {initialize_write,31'h40160000};
+            2: initial_word <= {initialize_write,31'h40170000};
+            3: initial_word <= {initialize_write,31'h40F80000};
+            4: initial_word <= {initialize_write,31'h40191300};
+            5: initial_word <= {initialize_write,31'h402A0300};
+            6: initial_word <= {initialize_write,31'h40290300};
+            7: initial_word <= {initialize_write,31'h40F20100};
+            8: initial_word <= {initialize_write,31'h40F97F00};
+            9: initial_word <= {initialize_write,31'h40FA0300};
+            
+            10: initial_word <= {initialize_write,31'h40200300};
+            11: initial_word <= {initialize_write,31'h40220100};
+            12: initial_word <= {initialize_write,31'h40210900};
+            13: initial_word <= {initialize_write,31'h4025E600};
+            14: initial_word <= {initialize_write,31'h4026E600};
+            15: initial_word <= {initialize_write,31'h40270300};
+            16: initial_word <= {initialize_write,31'h40100100};
+            17: initial_word <= {initialize_write,31'h40280000};
+            18: initial_word <= {initialize_write,31'h4023E600};
+            19: initial_word <= {initialize_write,31'h4024E600};
+            
+            20: initial_word <= {initialize_write,31'h400A0100};
+            21: initial_word <= {initialize_write,31'h400B0500};
+            22: initial_word <= {initialize_write,31'h400C0100};
+            23: initial_word <= {initialize_write,31'h400D0500};
+            24: initial_word <= {initialize_write,31'h400E0300};
+            25: initial_word <= {initialize_write,31'h400F0300};
+            26: initial_word <= {initialize_write,31'h401C2100};
+            27: initial_word <= {initialize_write,31'h401D0000};
+            28: initial_word <= {initialize_write,31'h401E4100};
+            29: initial_word <= {initialize_write,31'h401F0000};
+            30: initial_word <= {initialize_write,31'h40F30100};
+            31: initial_word <= {initialize_write,31'h40F40000};
+            32: initial_word <= {initialize_write,31'h40000F00};
+            33: initial_word <= {initialize_write,31'h4002007D};
+            34: initial_word <= {initialize_write,31'h000C2101}; 
+        endcase
+    end
+    
+    reg [7:0] input_data; 
+    reg [7:0] output_data; 
+    wire [7:0] address; 
+    wire done;
+    wire error;
+    reg [7:0] data; 
+    reg enable_delay; 
+    
+    assign address [7:0] = {{7'b0111011}, {1'b0}}; 
+
+    /* 
+        TWI INSTANTIATION
+    */
+    
+    TWI twi_controller (
+        .MSG_I (message), 
+        .STB_I (strobe), 
+        .A_I (address), 
+        .D_I (input_data),
+        .D_O (output_data), 
+        .DONE_O (done), 
+        .ERR_O (error), 
+        .CLK (clk), 
+        .SRST (rst),
+        .SDA (serial_data), 
+        .SCL (serial_clock)
+        );
+endmodule
+
+
+`timescale 1ns / 1ps
+//////////////////////////////////////////////////////////////////////////////////
+// 
+//////////////////////////////////////////////////////////////////////////////////
+
+
+module uart_finite_state_machine(
+        input wire clk
+    );
+    
+    
+     //*******************************************************
+            // FSM
+            localparam READ_CONTROL = 5'd4;
+            localparam WRITE_CONTROL = 5'd5;
+            localparam UART_SIGNAL_SELECT = 5'd6;
+            localparam UART_DONE = 5'd7;
+             
+            
+            
+            
+            //BITS_SELECT
+            
+            localparam UPPER = 1'd0;
+            localparam LOWER = 1'd1;
+            
+            reg [1:0] signal_state = LOWER;
+            
+            reg [15:0] inc_count = 0;
+            reg [4:0] uart_state = 5'd0;
+            
+            reg [7:0] uart_din;
+            
+            
+             reg rst = 0;
+            reg [7:0] din;
+            reg [7:0] address; 
+            reg w_en = 1;
+            reg r_en = 0; 
+            wire [7:0] dout;
+            
+            
+            uart uart_i (
+                .clk(clk),
+                .rst(rst),
+                .din(din),
+                .address(address),
+                .w_en(w_en),
+                .r_en(r_en), 
+                .dout(dout),
+                .tx(tx));
+                
+              
+            
+            always @(posedge clk) begin 
+                
+                        case (uart_state) 
+                        READ_CONTROL: begin 
+                            w_en <= 0;
+                            r_en <= 1;
+                            address <= 1;
+                            if (dout[1] == 1) begin
+                                uart_state <= WRITE_CONTROL;
+                            end
+                        end
+                        
+                        WRITE_CONTROL: begin 
+                            w_en <= 1;
+                            r_en <= 0;
+                            address <= 2;
+                            din <= uart_din; //Number 
+                            uart_state <= UART_SIGNAL_SELECT;  
+                        end
+                        
+                        UART_SIGNAL_SELECT: begin
+                        //Design a way to select a signal for the finite state state Machine of the UART. 
+                        //UPPER BITS, LOWER BITS
+                        //
+                            case (signal_state)
+                            
+                            LOWER: begin
+                                uart_din = inc_count[15:8];
+                                uart_state = READ_CONTROL;
+                                signal_state = UPPER; 
+                            end
+                            UPPER: begin
+                              
+                               uart_state = UART_DONE;
+                            end
+                        endcase
+                        end 
+                        
+                        UART_DONE: begin 
+                         w_en <= 0;
+                         r_en <= 0;
+                    
+                        end  
+            endcase 
+          end
+endmodule
+
+
