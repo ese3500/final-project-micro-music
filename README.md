@@ -29,8 +29,7 @@ Micro-music is deeply invested in improving the recording, playback, and visuali
 These are to help guide and direct your progress.
 
 <ol>
-   <li>Record music and save it into a playable audio file that can be played on the speaker later</li>
-   <li>Amplify music using volume control and a speaker in real time</li>
+   <li>Record music and play it back through headphones or speakers</li>
    <li>Provide music visualization features through LED Matrix</li>
    <li>Ensure the device is cheap and portable</li>
    <li>Ensure the device is user-friendly by making the buttons, and knobs very intuitive to use</li>
@@ -95,13 +94,13 @@ By the first milestone, we expect to have all the necessary components ordered. 
 
 What do you expect to achieve by the final demonstration or after milestone 1?
 
-By the final demonstration, we expect have implemented the audio recording and file storage features. This should allow the user to press a button to start recording, play audio into the microphone of the device, and then stop recording and save the file. Then, through a remote control, the user should be able to select and play their desired music files through the speaker and LED light strips. Because the memory space on the AtMega328PB is limited, we will communicate with a web server via the Raspberry PI where the AtMega328PB can send audio data to and read audio data from. The ESP32 will write to the LED array. We also expect to have fitted all the components (MCU, speaker, microphone, LED strips, circuit parts) into the container with all the user interaction parts (knobs, sensors, and LED light strips) integrated for the user to easily use. 
+By the final demonstration, we expect have implemented the audio recording and playback features. This should allow the user to press a button to start recording, play audio into the microphone of the device, and then stop recording and playback the audio. The ESP32 will receive audio data from the AtMega328PB and write to the LED array. We also expect to have fitted all the components (MCU, speaker, microphone, LED strips, circuit parts) into the container with all the user interaction parts (knobs, sensors, and LED light strips) integrated for the user to easily use. 
 
 ### 8. Methodology
 
-First, we will outline our design in both software and hardware. For software, we will discuss how each feature will be implemented using software. For example, for recording audio, we will establish that we will use an interrupt service routine triggered by a button press to start the recording process. We also will define how the software in the AtMega328PB will interface with peripherals such as the external memory storage device, the microphone, speaker, LED light strips, etc.. This will require reading the datasheets of the various peripherals we have sourced and discussing how the AtMega can properly interface with them using polling/interrupts or serial communication. For hardware, we plan to draw a circuit schematic outlining all the wire connections between the AtMega328PB and peripherals.
+First, we will outline our design in both software and hardware. For software, we will discuss how each feature will be implemented using software. For example, for recording audio, we will establish that we will use an interrupt service routine triggered by a button press to start the recording process. We also will define how the software in the AtMega328PB will interface with peripherals. This will require reading the datasheets of the various peripherals we have sourced and discussing how the AtMega can properly interface with them using polling/interrupts or serial communication. For hardware, we plan to draw a circuit schematic outlining all the wire connections between the AtMega328PB and peripherals.
 
-Next, after the planning stage, we will implement one feature at a time. The first feature will be reading in audio using the microphone and then amplifying it through the speaker, with adjustable volume control using a potentiometer. The next feature will be providing real-time audio visualization through the LED strips (as the audio is being played into the microphone). Next, we will implement the recording music feature and the process of storing the audio data a web server using the ESP32 chip. Lastly, we will implement the process by which the AtMega320PB reads audio data from the ESP32 chip to play music files through the speaker and the LED light strips. Each feature will hopefully take a few days to a week to implement. 
+Next, after the planning stage, we will implement one feature at a time. The first feature will be reading in audio using the microphone. The next feature will be providing real-time audio visualization through the LED strips (as the audio is being played into the microphone). Next, we will implement the recording and playback music feature. Each feature will hopefully take a few days to a week to implement. 
 
 Finally, once all the features are implemented, we will start to integrate the components into the container that will house everything. This will involve a lot of testing and assembling. By the end, we should have a completed audio recording, amplifying, and playback speaker that provides cool visualization features.
 
@@ -109,9 +108,9 @@ Finally, once all the features are implemented, we will start to integrate the c
 
 A microphone that can convert an audio signal into an electrical signal between 0V and 5V is needed to enable the AtMega328PB to read audio signals using its ADC. The microphone is preferably not too big (in the order of a few centimeters in size). Also, the microphone should be good quality, as in it can capture sounds with very high accuracy.
 
-Additionally, a speaker is needed to output amplified music. The speaker should be able to output high volume sounds (so the user can really immerse themselves). Also, the speaker should be of high quality for user enjoyment. The speaker needs to operate between 0 and 5V so it can interface with the AtMega328PB.
+Additionally, a speaker is needed to output amplified music. The speaker should be able to output high volume sounds (so the user can really immerse themselves). Also, the speaker should be of high quality for user enjoyment. The speaker needs to operate between 0 and 5V.
 
-Next, LED strips will be used to provide music visualization. We plan to line up multiple LED strips to create a 2D screen of lights, which can then be programmed to output the corresponding audio signals in a cool way. The LED strips should be able to interface with the AtMega328PB, so we can program them to provide audio visualization functionality. Additionally, the strips shouldn't be too long, as we only need a few centimeters of each strip to create a small 2D screen of LEDs. Finally, the LED strips should be using their own power source, which should be battery powered so the entire system is portable.
+Next, LED matrix will be used to provide music visualization. We plan to line up multiple LED strips to create a 2D screen of lights, which can then be programmed to output the corresponding audio signals in a cool way. The LED matrix should be able to interface with the ESP32, so we can program them to provide audio visualization functionality. 
 
 The ESP32 chip used in Lab 4 will be utilized to allow the system to write data to the LED array.
 
@@ -131,12 +130,12 @@ The one metric for evaluating our solution is the sum of these three metrics, wh
 
 This section is to help guide your progress over the next few weeks. Feel free to adjust and edit the table below to something that would be useful to you. Really think about what you want to accomplish by the first milestone.
 
-| **Week**            | **Task**                                                                  | **Assigned To**    |
-|---------------------|---------------------------------------------------------------------------|--------------------|
-| Week 1: 3/24 - 3/31 |                                                                           | Nhlanhla and Tim   |
-| Week 2: 4/1 - 4/7   | Order parts                                                               | Tim and Nhlanhla   |
-| Week 3: 4/8 - 4/14  | Implement real-time audio visualization using LEDs                        | Nhlanhla           |
-| Week 4: 4/15 - 4/21 | Implement reading writing audio data to web server for recording audio    | Nhlanhla and Tim   |
+| **Week**            | **Task**                                                                          | **Assigned To**    |
+|---------------------|-----------------------------------------------------------------------------------|--------------------|
+| Week 1: 3/24 - 3/31 |                                                                                   | Nhlanhla and Tim   |
+| Week 2: 4/1 - 4/7   | Order parts                                                                       | Tim and Nhlanhla   |
+| Week 3: 4/8 - 4/14  | Implement real-time audio visualization using LEDs                                | Nhlanhla           |
+| Week 4: 4/15 - 4/21 | Implement reading recording and playback of audio                                 | Nhlanhla and Tim   |
 | Week 5: 4/22 - 4/26 | Implement remote control and integrate all components into one device (container) | Nhlanhla and Tim   |
 
 ### 12. Proposal Presentation
