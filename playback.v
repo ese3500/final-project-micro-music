@@ -9,7 +9,7 @@
 // Project Name: Differentiated Audio Box 
 // Target Devices: xc7a200tsbg484-L
 // Tool Versions: 
-// Description: I am creating a light weight IP that is goihng to sample sound, process it, store it in memory
+// Description: creating a light weight IP that is goihng to sample sound, process it, store it in memory
 // and playback. 
 // 
 // Dependencies: 
