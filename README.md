@@ -155,6 +155,7 @@ Don't forget to make the GitHub pages public website!
 If you’ve never made a Github pages website before, you can follow this webpage (though, substitute your final project repository for the Github username one in the quickstart guide):  <https://docs.github.com/en/pages/quickstart>
 
 ### 1. Video
+
 (https://youtu.be/_2FNFVjFbK0)
 
 ### 2. Images
@@ -180,7 +181,9 @@ Reflect on your project. Some questions to consider: What did you learn from it?
 
 ## References
 
-The [Kiss FFT library](https://github.com/mborgerding/kissfft) was used for converting time domain audio data into a frequency spectrum that could be displayed on the LED matrix.
+The [Kiss FFT library](https://github.com/mborgerding/kissfft) was used on the AtMega328PB to convert the time domain audio data obtained from the ADC into a spectrum of frequencies. To implement the ADC library, the kiss_fft_cfg object needed to be declared and initialized in main.c. The first parameter, nfft, is the number of samples to be inputted for each fast fourier transform. The second parameter is a boolean literal representing whether or not the inverse Fast Fourier Transform should be performed (frequency domain to time domain). In our case, we want time domain to frequency domain, so this boolean parameter was set to false. The final two parameters, both of which are set to NULL, are to ensure the FFT object is allocated using the malloc() function. Additionally, two 
+
+
 
 [P3RGB64x32MatrixPanel library for ESP32](https://github.com/NeoCat/ESP32-P3RGB64x32MatrixPanel) was used for drawing on the LED matrix. 
 
