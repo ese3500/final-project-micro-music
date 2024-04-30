@@ -724,7 +724,7 @@ module DDR_wrapper
   wire ui_clk;
   wire ui_clk_sync_rst;
 
-  DDR DDR_i
+  DDR3 DDR_i
        (.aresetn(aresetn),
         .clk_ref_n(clk_ref_n),
         .clk_ref_p(clk_ref_p),
