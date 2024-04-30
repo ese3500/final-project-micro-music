@@ -1,8 +1,6 @@
-/* Derived from Adafruit RGB_matrix_Panel library */
-
-#include <Adafruit_GFX.h>  // Core graphics library
+#include <Adafruit_GFX.h>
 #include "P3RGB64x32MatrixPanel.h"
-#include <arduinoFFT.h>
+
 P3RGB64x32MatrixPanel matrix(25, 26, 27, 21, 22, 23, 15, 32, 33, 12, 16, 17, 18, false);
 
 int prevHeights[16];
@@ -13,11 +11,8 @@ int r = 0;
 int g = 0;
 int b = 15;
 
-int pixelVals[64];
-*/
-
 void IRAM_ATTR ISR() {
-    matrix.fillScreen(matrix.color444(0, 0, 0));
+  matrix.fillScreen(matrix.color444(0, 0, 0));
 }
 
 void IRAM_ATTR isr2() {
@@ -41,12 +36,12 @@ void IRAM_ATTR isr2() {
 }
 
 void setup() {
-
   Serial2.begin(1000000, SERIAL_8N2, 14);
   Serial.begin(9600);
   pinMode(39, INPUT);
   attachInterrupt(39, ISR, FALLING);
   attachInterrupt(4, isr2, FALLING);
+
   matrix.begin();
 }
 
@@ -59,10 +54,10 @@ void loop() {
         heights[i] = height;
       }
     }
+
     for (int i = 0; i < 16; i++) {
-      // normalize
       heights[i] = (heights[i] * 31) / 9;
-      if ((heights[i] - prevHeights[i]) >= 25) {
+      if ((heights[i] - prevHeights[i]) >= 12) {
         continue;
       }
 
@@ -74,5 +69,4 @@ void loop() {
       prevHeights[i] = heights[i];
     }
   }
-
 }
