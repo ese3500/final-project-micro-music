@@ -535,4 +535,258 @@ module clock_gen
         .locked(clk_wiz_0_locked));
 endmodule
 
+module DDR_wrapper
+   (aresetn,
+    clk_ref_n,
+    clk_ref_p,
+    ddr3_addr,
+    ddr3_ba,
+    ddr3_cas_n,
+    ddr3_ck_n,
+    ddr3_ck_p,
+    ddr3_cke,
+    ddr3_cs_n,
+    ddr3_dm,
+    ddr3_dq,
+    ddr3_dqs_n,
+    ddr3_dqs_p,
+    ddr3_odt,
+    ddr3_ras_n,
+    ddr3_reset_n,
+    ddr3_we_n,
+    init_calib_complete,
+    mmcm_locked,
+    s_axi_araddr,
+    s_axi_arburst,
+    s_axi_arcache,
+    s_axi_arid,
+    s_axi_arlen,
+    s_axi_arlock,
+    s_axi_arprot,
+    s_axi_arqos,
+    s_axi_arready,
+    s_axi_arsize,
+    s_axi_arvalid,
+    s_axi_awaddr,
+    s_axi_awburst,
+    s_axi_awcache,
+    s_axi_awid,
+    s_axi_awlen,
+    s_axi_awlock,
+    s_axi_awprot,
+    s_axi_awqos,
+    s_axi_awready,
+    s_axi_awsize,
+    s_axi_awvalid,
+    s_axi_bid,
+    s_axi_bready,
+    s_axi_bresp,
+    s_axi_bvalid,
+    s_axi_rdata,
+    s_axi_rid,
+    s_axi_rlast,
+    s_axi_rready,
+    s_axi_rresp,
+    s_axi_rvalid,
+    s_axi_wdata,
+    s_axi_wlast,
+    s_axi_wready,
+    s_axi_wstrb,
+    s_axi_wvalid,
+    sys_clk_n,
+    sys_clk_p,
+    sys_rst,
+    ui_clk,
+    ui_clk_sync_rst);
+  input aresetn;
+  input clk_ref_n;
+  input clk_ref_p;
+  output [13:0]ddr3_addr;
+  output [2:0]ddr3_ba;
+  output ddr3_cas_n;
+  output [0:0]ddr3_ck_n;
+  output [0:0]ddr3_ck_p;
+  output [0:0]ddr3_cke;
+  output [0:0]ddr3_cs_n;
+  output [0:0]ddr3_dm;
+  inout [7:0]ddr3_dq;
+  inout [0:0]ddr3_dqs_n;
+  inout [0:0]ddr3_dqs_p;
+  output [0:0]ddr3_odt;
+  output ddr3_ras_n;
+  output ddr3_reset_n;
+  output ddr3_we_n;
+  output init_calib_complete;
+  output mmcm_locked;
+  input [26:0]s_axi_araddr;
+  input [1:0]s_axi_arburst;
+  input [3:0]s_axi_arcache;
+  input [3:0]s_axi_arid;
+  input [7:0]s_axi_arlen;
+  input s_axi_arlock;
+  input [2:0]s_axi_arprot;
+  input [3:0]s_axi_arqos;
+  output s_axi_arready;
+  input [2:0]s_axi_arsize;
+  input s_axi_arvalid;
+  input [26:0]s_axi_awaddr;
+  input [1:0]s_axi_awburst;
+  input [3:0]s_axi_awcache;
+  input [3:0]s_axi_awid;
+  input [7:0]s_axi_awlen;
+  input s_axi_awlock;
+  input [2:0]s_axi_awprot;
+  input [3:0]s_axi_awqos;
+  output s_axi_awready;
+  input [2:0]s_axi_awsize;
+  input s_axi_awvalid;
+  output [3:0]s_axi_bid;
+  input s_axi_bready;
+  output [1:0]s_axi_bresp;
+  output s_axi_bvalid;
+  output [31:0]s_axi_rdata;
+  output [3:0]s_axi_rid;
+  output s_axi_rlast;
+  input s_axi_rready;
+  output [1:0]s_axi_rresp;
+  output s_axi_rvalid;
+  input [31:0]s_axi_wdata;
+  input s_axi_wlast;
+  output s_axi_wready;
+  input [3:0]s_axi_wstrb;
+  input s_axi_wvalid;
+  input sys_clk_n;
+  input sys_clk_p;
+  input sys_rst;
+  output ui_clk;
+  output ui_clk_sync_rst;
+
+  wire aresetn;
+  wire clk_ref_n;
+  wire clk_ref_p;
+  wire [13:0]ddr3_addr;
+  wire [2:0]ddr3_ba;
+  wire ddr3_cas_n;
+  wire [0:0]ddr3_ck_n;
+  wire [0:0]ddr3_ck_p;
+  wire [0:0]ddr3_cke;
+  wire [0:0]ddr3_cs_n;
+  wire [0:0]ddr3_dm;
+  wire [7:0]ddr3_dq;
+  wire [0:0]ddr3_dqs_n;
+  wire [0:0]ddr3_dqs_p;
+  wire [0:0]ddr3_odt;
+  wire ddr3_ras_n;
+  wire ddr3_reset_n;
+  wire ddr3_we_n;
+  wire init_calib_complete;
+  wire mmcm_locked;
+  wire [26:0]s_axi_araddr;
+  wire [1:0]s_axi_arburst;
+  wire [3:0]s_axi_arcache;
+  wire [3:0]s_axi_arid;
+  wire [7:0]s_axi_arlen;
+  wire s_axi_arlock;
+  wire [2:0]s_axi_arprot;
+  wire [3:0]s_axi_arqos;
+  wire s_axi_arready;
+  wire [2:0]s_axi_arsize;
+  wire s_axi_arvalid;
+  wire [26:0]s_axi_awaddr;
+  wire [1:0]s_axi_awburst;
+  wire [3:0]s_axi_awcache;
+  wire [3:0]s_axi_awid;
+  wire [7:0]s_axi_awlen;
+  wire s_axi_awlock;
+  wire [2:0]s_axi_awprot;
+  wire [3:0]s_axi_awqos;
+  wire s_axi_awready;
+  wire [2:0]s_axi_awsize;
+  wire s_axi_awvalid;
+  wire [3:0]s_axi_bid;
+  wire s_axi_bready;
+  wire [1:0]s_axi_bresp;
+  wire s_axi_bvalid;
+  wire [31:0]s_axi_rdata;
+  wire [3:0]s_axi_rid;
+  wire s_axi_rlast;
+  wire s_axi_rready;
+  wire [1:0]s_axi_rresp;
+  wire s_axi_rvalid;
+  wire [31:0]s_axi_wdata;
+  wire s_axi_wlast;
+  wire s_axi_wready;
+  wire [3:0]s_axi_wstrb;
+  wire s_axi_wvalid;
+  wire sys_clk_n;
+  wire sys_clk_p;
+  wire sys_rst;
+  wire ui_clk;
+  wire ui_clk_sync_rst;
+
+  DDR DDR_i
+       (.aresetn(aresetn),
+        .clk_ref_n(clk_ref_n),
+        .clk_ref_p(clk_ref_p),
+        .ddr3_addr(ddr3_addr),
+        .ddr3_ba(ddr3_ba),
+        .ddr3_cas_n(ddr3_cas_n),
+        .ddr3_ck_n(ddr3_ck_n),
+        .ddr3_ck_p(ddr3_ck_p),
+        .ddr3_cke(ddr3_cke),
+        .ddr3_cs_n(ddr3_cs_n),
+        .ddr3_dm(ddr3_dm),
+        .ddr3_dq(ddr3_dq),
+        .ddr3_dqs_n(ddr3_dqs_n),
+        .ddr3_dqs_p(ddr3_dqs_p),
+        .ddr3_odt(ddr3_odt),
+        .ddr3_ras_n(ddr3_ras_n),
+        .ddr3_reset_n(ddr3_reset_n),
+        .ddr3_we_n(ddr3_we_n),
+        .init_calib_complete(init_calib_complete),
+        .mmcm_locked(mmcm_locked),
+        .s_axi_araddr(s_axi_araddr),
+        .s_axi_arburst(s_axi_arburst),
+        .s_axi_arcache(s_axi_arcache),
+        .s_axi_arid(s_axi_arid),
+        .s_axi_arlen(s_axi_arlen),
+        .s_axi_arlock(s_axi_arlock),
+        .s_axi_arprot(s_axi_arprot),
+        .s_axi_arqos(s_axi_arqos),
+        .s_axi_arready(s_axi_arready),
+        .s_axi_arsize(s_axi_arsize),
+        .s_axi_arvalid(s_axi_arvalid),
+        .s_axi_awaddr(s_axi_awaddr),
+        .s_axi_awburst(s_axi_awburst),
+        .s_axi_awcache(s_axi_awcache),
+        .s_axi_awid(s_axi_awid),
+        .s_axi_awlen(s_axi_awlen),
+        .s_axi_awlock(s_axi_awlock),
+        .s_axi_awprot(s_axi_awprot),
+        .s_axi_awqos(s_axi_awqos),
+        .s_axi_awready(s_axi_awready),
+        .s_axi_awsize(s_axi_awsize),
+        .s_axi_awvalid(s_axi_awvalid),
+        .s_axi_bid(s_axi_bid),
+        .s_axi_bready(s_axi_bready),
+        .s_axi_bresp(s_axi_bresp),
+        .s_axi_bvalid(s_axi_bvalid),
+        .s_axi_rdata(s_axi_rdata),
+        .s_axi_rid(s_axi_rid),
+        .s_axi_rlast(s_axi_rlast),
+        .s_axi_rready(s_axi_rready),
+        .s_axi_rresp(s_axi_rresp),
+        .s_axi_rvalid(s_axi_rvalid),
+        .s_axi_wdata(s_axi_wdata),
+        .s_axi_wlast(s_axi_wlast),
+        .s_axi_wready(s_axi_wready),
+        .s_axi_wstrb(s_axi_wstrb),
+        .s_axi_wvalid(s_axi_wvalid),
+        .sys_clk_n(sys_clk_n),
+        .sys_clk_p(sys_clk_p),
+        .sys_rst(sys_rst),
+        .ui_clk(ui_clk),
+        .ui_clk_sync_rst(ui_clk_sync_rst));
+endmodule
+
 
