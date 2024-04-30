@@ -122,6 +122,9 @@ ISR(PCINT2_vect) {
 	if (b2JustPressed) {
 		// change high variable to its opposite (see its use in main)
 		high = !high;
+
+		// debouncing
+		_delay_ms(50);
 	}
 
 	// ensure interrupt doesn't execute again when button unpressed
@@ -134,6 +137,9 @@ ISR(PCINT1_vect) {
 		PORTC &= ~(1<<PORTC5);
 		_delay_ms(50);
 		PORTC |= (1<<PORTC5);
+
+		// debouncing
+		_delay_ms(50);
 	}
 
 	// ensure interrupt doesn't execute again when button unpressed
@@ -149,6 +155,9 @@ ISR(PCINT0_vect) {
 		PORTD &= ~(1<<PORTD0);
 		_delay_ms(50);
 		PORTD |= (1<<PORTD0);
+
+		// debouncing
+		_delay_ms(50);
 	}
 
 	// ensure interrupt doesn't execute again when button unpressed
