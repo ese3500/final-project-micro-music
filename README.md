@@ -31,7 +31,7 @@ These are to help guide and direct your progress.
 <ol>
    <li>Record music and save it into a playable audio file that can be played on the speaker later</li>
    <li>Amplify music using volume control and a speaker in real time</li>
-   <li>Provide music visualization features through LED strips</li>
+   <li>Provide music visualization features through LED Matrix</li>
    <li>Ensure the device is cheap and portable</li>
    <li>Ensure the device is user-friendly by making the buttons, and knobs very intuitive to use</li>
 </ol>
