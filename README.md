@@ -159,7 +159,6 @@ If you’ve never made a Github pages website before, you can follow this webpag
 
 ### 2. Images
 
-[Insert final project images here]
 ![image](https://github.com/ese3500/final-project-micro-music/assets/141350627/2a752ccd-b297-40b8-8c8a-ba9ee18d7ca4)
 
 
@@ -181,7 +180,9 @@ Reflect on your project. Some questions to consider: What did you learn from it?
 
 ## References
 
-Fill in your references here as you work on your proposal and final submission. Describe any libraries used here.
+The [Kiss FFT library](https://github.com/mborgerding/kissfft) was used for converting time domain audio data into a frequency spectrum that could be displayed on the LED matrix.
+
+[P3RGB64x32MatrixPanel library for ESP32](https://github.com/NeoCat/ESP32-P3RGB64x32MatrixPanel) was used for drawing on the LED matrix. 
 
 ## Github Repo Submission Resources
 
