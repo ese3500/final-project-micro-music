@@ -1,4 +1,4 @@
-// configure baud rate of 1 MHz
+// set baud rate to 1 MHz
 #define F_CPU 16000000UL
 #define BAUD_RATE 1000000
 #define BAUD_PRESCALER (((F_CPU / (BAUD_RATE * 16UL))) - 1)
@@ -40,7 +40,7 @@ void UART_init(int BAUD_PRESCALER)
   // This part is different. Enable receiver for RXEN1 (instead of RXEN0 and TXEN0), which is for the micro-USB port
   UCSR1B = (1<<RXEN1);
   
-  // same as previous
+  // set data and stop bits (same as previous)
   UCSR1C = (1<<UCSZ11) | (1<<UCSZ10); // 8 data bits
   UCSR1C |= (1<<USBS1); // 2 stop bits
 }
@@ -234,7 +234,7 @@ int main(void)
 				UART_putstring(string);
 			}
 
-			// send 'x' character through UART, which allows ESP32 to delineate strings of frequencies
+			// send 'x' character through UART, which allows ESP32 to delineate separate strings of frequencies
 			sprintf(string,"x");
 			UART_putstring(string);
 		}

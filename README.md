@@ -156,7 +156,7 @@ If you’ve never made a Github pages website before, you can follow this webpag
 
 ### 1. Video
 
-(https://youtu.be/_2FNFVjFbK0)
+[Link](https://youtu.be/_2FNFVjFbK0) to a youtube video of the demo.
 
 ### 2. Images
 
@@ -181,11 +181,34 @@ Reflect on your project. Some questions to consider: What did you learn from it?
 
 ## References
 
-The [Kiss FFT library](https://github.com/mborgerding/kissfft) was used on the AtMega328PB to convert the time domain audio data obtained from the ADC into a spectrum of frequencies. To implement the ADC library, the kiss_fft_cfg object needed to be declared and initialized in main.c. The first parameter, nfft, is the number of samples to be inputted for each fast fourier transform. The second parameter is a boolean literal representing whether or not the inverse Fast Fourier Transform should be performed (frequency domain to time domain). In our case, we want time domain to frequency domain, so this boolean parameter was set to false. The final two parameters, both of which are set to NULL, are to ensure the FFT object is allocated using the malloc() function. Additionally, two 
+### Appendix
+
+#### Kiss FFT Library
+
+##### Overview 
+
+The [Kiss FFT library](https://github.com/mborgerding/kissfft) was used on the AtMega328PB to convert the time domain audio data obtained from the ADC into a spectrum of frequencies. 
+
+##### Implementation
+
+To implement the ADC library, the kiss_fft_cfg object needed to be declared and initialized in main.c. The first parameter, nfft, is the number of samples to be inputted for each fast fourier transform. The second parameter is a boolean literal representing whether or not the inverse Fast Fourier Transform should be performed (frequency domain to time domain). In our case, we want time domain to frequency domain, so this boolean parameter was set to false. The final two parameters, both of which are set to NULL, are to ensure the FFT object is allocated using the malloc() function. Additionally, two kiss_fft_cpx objects were used as input and output complex number arrays for the FFT function. For inputting into the cx_in array, the ADC values were placed into the real part of the complex number array and 0s were placed into the imaginary part of the array, as there was no phase shift when reading in the ADC values. For the cx_out array, the magnitudes of the prominence of each frequency could be calculated by finding the magnitude of each complex number in the array. In this way, the kiss fft library provided a simple way to implement the fast fourier transform on audio ADC values to find a frequency spectrum.
+
+##### How it works
+
+The way Kiss FFT works is it first takes the input of sound data through cx_in, which represents how loud the sound is at different points in time. Then, it processes this sound data using techniques derived from the Cooley-Tukey algorithm. The basic idea of the algorithm is to turn the difficult problem of performing FFT on 32 data points into two relatively easier problems of performing FFT on 16 data points each. Then, these two easier problems can each be turned into two even easier probelms of 8 data points, and so on. For this reason, the size of the input must be a power of 2. This is called radix-2 decimation. Additionally, Kiss FFT utilizes "butterfly operations" and complex number operations to convert these easier solved problems back into the solution for the original difficult problem. Finally, Kiss FFT is an "out-of-place" FFT because it stores its input and output arrays in different memory locations, which is why there are separate cx_in and cx_out arrays.
 
 
+#### P3RGB64x32MatrixPanel library for ESP32 Library
 
-[P3RGB64x32MatrixPanel library for ESP32](https://github.com/NeoCat/ESP32-P3RGB64x32MatrixPanel) was used for drawing on the LED matrix. 
+##### Overview
+
+[P3RGB64x32MatrixPanel library for ESP32](https://github.com/NeoCat/ESP32-P3RGB64x32MatrixPanel) was used for drawing on the LED matrix through the ESP32.
+
+##### Implementation
+The LED driver is initialized by using the matrix.begin() function. Then, in the main function, the matrix.fillRect(x, y, w, h, color) functions were used to draw the frequency spectrum provided by the AtMega328PB through UART onto the LED matrix. The parameters of the fillRect function are the x and y position of the top left of the rectangle, the width and height of the rectangle relative to its x and y top left position, and finally, the color of the draw rectangle. For the color of the rectangles, the matrix.color444() function was used to generate the red, green, blue, and white colors. The arduino code ensures that the rectangles represent the frequency spectrum being sent through UART. Additionally, it doesn't need to clear the screen each time a new spectrum is sent. Instead, it can update the heights of each rectangle by adding/deleting parts of the rectangle.
+
+##### How it works
+The LED driver library uses SPI to enable communication between the ESP32 and the LED matrix panel. However, because the datasheet of the LED matrix panel did not provide a detail description of how this SPI protocol worked, a library was the option to drive the panel. In the matrix.begin() initialization function, the all the pins that are needed for the SPI protocol are configured to output and some are written to their required values. It also intializes a timer semaphore to ensure that the task of refreshing the LED matrix is executed periodically. The stop() functions is never used in our code, but it disables the timer, which means the screen will no longer refresh. The way the library draws pixels is using the drawPixel function, which utilizes a buffer and sets a single element in the buffer to the provided color. Next, the draw() function is what actually implements the SPI protocol to "draw" the buffer onto the screen. The function iterates through x and y pixels on the screen, and it uses the cmp and cnt variables along with the inputted color variables r1, g1, and b1 to determine whether the GPIO pin is set or not. Then, it toggles the clock pin (pinCLK) to shift the data into the shift register of the LED matrix. Between each y value (after each column), it sets pins related to row switching and latch/output enabling, waits a small amount of time to allow the operations to process, and hen moves on to the next row (y value). In this way, pixel data is shifted into the internal RAM of the LED matrix to draw pixels on its screen. 
 
 ## Github Repo Submission Resources
 
