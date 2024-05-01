@@ -88,13 +88,13 @@ Switches are used to take user input for selecting visualization mode.
 
 What do you expect to accomplish by the first milestone?
 
-By the first milestone, we expect to have all the necessary components ordered. This includes the microphone, speaker, LED array, and other components like a knob for volume control. We also expect to have implemented real-time audio visualization by the first milestone. In other words, audio signals should be able to be played through the speaker and visualized through the LED matrix. Additionally, we hope to have implemented audio sampling. Also, we expect to have obtained a container that can house all the circuitry.
+By the first milestone, had all the necessary components ordered. This includes the microphone, speaker, LED Matrix, and other components like a knob for volume control. We also hoped to have implemented real-time audio visualization by the first milestone. In other words, audio signals were expected to be able to be played through the speaker and visualized through the LED matrix. Additionally, we hoped to have implemented audio sampling. Also, we expected to have obtained a container that can house all the circuitry.
 
 ### 7. Final Demo
 
 What do you expect to achieve by the final demonstration or after milestone 1?
 
-By the final demonstration, we expect have implemented the audio recording and playback features. This should allow the user to press a button to start recording, play audio into the microphone of the device, and then stop recording and playback the audio. The ESP32 will receive audio data from the AtMega328PB and write to the LED array. We also expect to have fitted all the components (MCU, speaker, microphone, LED strips, circuit parts) into the container with all the user interaction parts (knobs, sensors, and LED light strips) integrated for the user to easily use. 
+By the final demonstration, we expected to have implemented the audio recording and playback features. This allowed the user to press a button to start recording, play audio into the microphone of the device, and then stop recording and playback the audio. The ESP32 received audio data from the AtMega328PB and drove to the LED Matrix. We also expected to have fitted all the components (MCU, speaker, microphone, LED strips, circuit parts) into the container with all the user interaction parts (knobs, sensors, and LED light strips) integrated for the user to easily use. We were able to achieve all this by Final Demo day. 
 
 ### 8. Methodology
 
