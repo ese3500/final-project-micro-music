@@ -151,7 +151,7 @@ If you’ve never made a Github pages website before, you can follow this webpag
 
 ### 1. Video
 
-[Link](https://youtu.be/_2FNFVjFbK0) to a youtube video of the demo.
+[Link](https://www.youtube.com/watch?v=WL8mVhScz18) to a youtube video of the demo.
 
 ### 2. Images
 
