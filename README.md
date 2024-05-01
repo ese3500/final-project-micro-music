@@ -251,8 +251,13 @@ One obstacle that we didn't anticipate was driving the LED matrix. While we coul
 Finally, in the future, we hope to get the audio visualizer running completely on the FPGA or using 3 AtMega328PBs. The FPGA can sample and perform FFT and a much faster rate than the AtMega328PB, so we are curious as to how different the visualization will look when using the FPGA. We are also curious how to synchronize 3 AtMega328PB's ADCs to sample at above 40 kHz.
 
 ## References
+   [AtMega 328PB datasheet](https://ww1.microchip.com/downloads/en/DeviceDoc/40001906A.pdf)
+   
+  [Nexys Video Artix - 7 Datasheet](https://digilent.com/reference/_media/reference/programmable-logic/nexys-video/nexys-video_rm.pdf)
 
-   [AtMega 328PB datasheet] (https://ww1.microchip.com/downloads/en/DeviceDoc/40001906A.pdf)
+  [Vivado Tools for FPGA Development](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2023-1.html)
+
+
 ### Appendix
 
 #### Kiss FFT Library
