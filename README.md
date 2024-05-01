@@ -291,14 +291,4 @@ The LED driver was initialized by using the matrix.begin() function. Then, in th
 ##### How it works
 The LED driver library uses SPI to enable communication between the ESP32 and the LED matrix panel. However, because the datasheet of the LED matrix panel does not provide a detail description of how this SPI protocol works, a library was the best option to drive the panel. In the matrix.begin() initialization function, all the pins that are needed for the SPI protocol are configured as output pins and some are written to their required values. For example, the clock and latch pins are pulled down to ensure that no data is being shifted into the LED matrix. It also intializes a timer semaphore to ensure that the task of refreshing the LED matrix is executed periodically. The stop() function is never used in our code, but it disables the timer, which means the screen will no longer refresh. The way the library draws pixels is using the drawPixel function, which utilizes a buffer and sets a single element (which represents a single pixel) in the buffer to the provided color. Next, the draw() function is what actually implements the SPI protocol to "draw" the buffer onto the screen. The function iterates through x and y pixels on the screen, and it uses the cmp and cnt variables along with the inputted color variables r1, g1, and b1 to determine whether the GPIO pin is set or not. Then, it toggles the clock pin (pinCLK) to shift the data into the shift register of the LED matrix. Between each y value (after a row has been iterated through), it sets the pins related to row switching and latch/output enabling, waits a small amount of time to allow the operations to process, and then moves onto the next row (y value). In this way, pixel data is shifted into the internal RAM of the LED matrix to draw pixels on its screen. 
 
-## Github Repo Submission Resources
 
-You can remove this section if you don't need these references.
-
-* [ESE5160 Example Repo Submission](https://github.com/ese5160/example-repository-submission)
-* [Markdown Guide: Basic Syntax](https://www.markdownguide.org/basic-syntax/)
-* [Adobe free video to gif converter](https://www.adobe.com/express/feature/video/convert/video-to-gif)
-* [Curated list of example READMEs](https://github.com/matiassingers/awesome-readme)
-* [VS Code](https://code.visualstudio.com/) is heavily recommended to develop code and handle Git commits
-  * Code formatting and extension recommendation files come with this repository.
-  * Ctrl+Shift+V will render the README.md (maybe not the images though)
