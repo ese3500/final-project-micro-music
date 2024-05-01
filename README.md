@@ -142,7 +142,7 @@ This section is to help guide your progress over the next few weeks. Feel free t
 
 
 
-https://docs.google.com/presentation/d/1Cn8vNzp07OBihLg25p4tsMr9FRUsMsbQ/edit?usp=sharing&ouid=101561420450155736831&rtpof=true&sd=true
+[Micro-Sounds Official Slides] (https://docs.google.com/presentation/d/1daS6fSF7b5Ld-mRoK1HXKTDMX_lYcx7b/edit?usp=sharing&ouid=101561420450155736831&rtpof=true&sd=true)
 
 ## Final Project Report
 
