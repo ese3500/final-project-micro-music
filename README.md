@@ -257,6 +257,10 @@ Finally, in the future, we hope to get the audio visualizer running completely o
 
   [Vivado Tools for FPGA Development](https://www.xilinx.com/support/download/index.html/content/xilinx/en/downloadNav/vivado-design-tools/2023-1.html)
 
+  [Kiss FFT Library](https://github.com/mborgerding/kissfft)
+
+  [P3RGB64x32MatrixPanel library for ESP32](https://github.com/NeoCat/ESP32-P3RGB64x32MatrixPanel)
+
 
 ### Appendix
 
