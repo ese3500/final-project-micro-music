@@ -196,7 +196,7 @@ This requirement was completely satisfied. The AtMega328PB sent 16 frequency amp
 </li>
 <li>"The program in the ESP32 shall control how many LEDs are set on based on the amplitude and frequency. The program shall have options for visualization, including just lines for signals and a sine wave. This can be tested visually."
 
-This requirement was partially satisfied. The outputted frequency spectrum on the LED matrix using 1-width rectangles (lines) was tested visually, where the rectangle heights followed the frequencies of the music being played into the microphone with little to no delay. However, we did not include a sine wave visualization pattern because it resulted in a lot of delay between the music being played and the visualization pattern being outputted. Specifically, the delay was in the order of a few seconds, which is too much for an audio visualizer.
+This requirement was satisfied. The outputted frequency spectrum on the LED matrix using 1-width rectangles (lines) was tested visually, where the rectangle heights followed the frequencies of the music being played into the microphone with little to no delay. However, we did not include a sine wave visualization pattern because it resulted in a lot of delay between the music being played and the visualization pattern being outputted. Specifically, the delay was in the order of a few seconds, which is too much for an audio visualizer.
 </li>
 <li>"The program shall have a GPIO pin change interrupt for a switch, which will determine the visualization mode being displayed. This can be tested visually." 
 
@@ -208,7 +208,7 @@ This requirement was completely satisfied. Button debouncing was implemented in 
 
 #### 3.2 Hardware Requirements Specification (HRS) Results
 
-Overall, we hit almost all of our hardware requirements. However, there were some requirements that were modified because there were more efficient ways to achieve the same outcome. These requirements are discussed below:
+Overall, we hit all of our hardware requirements. However, there were some requirements that were modified because there were more efficient ways to achieve the same outcome. These requirements are discussed below:
 
 <ul>
 <li>"The microphone shall be used to convert audio signals into electrical signals, which will be sampled by an FPGA and sent via UART to the AtMega328PB." 
