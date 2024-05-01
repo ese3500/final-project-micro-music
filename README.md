@@ -21,7 +21,7 @@ Micro Music is a group at the University of Pennsylvania that produces the most 
 
 ### 2. Motivation
 
-Micro-music is deeply invested in improving the recording, playback, and visualization capababilities at a very low cost, to provide music producers the ability to produce any music of their choice without the burden of cost and energy usage. Using a low-powered ATMEGA328PB microcontroller and a 7-series FPGA, we are confident in our ability to improve and shape the recording, playback, and visualization opportunities in the music industry. Micro-music is the change that is needed to accelerate the music industry - and we know it will. 
+Micro-music is deeply invested in improving the recording, playback, and visualization capababilities at a very low cost, to provide music producers the ability to produce any music of their choice without the burden of cost and energy usage. Using a low-powered ATMEGA328PB microcontroller and a 7-series FPGA, we are confident in our ability to improve and shape the recording, playback, and visualization opportunities in the music industry.
 
 
 ### 3. Goals
