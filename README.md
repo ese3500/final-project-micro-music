@@ -98,33 +98,33 @@ By the final demonstration, we expected to have implemented the audio recording 
 
 ### 8. Methodology
 
-First, we will outline our design in both software and hardware. For software, we will discuss how each feature will be implemented using software. For example, for recording audio, we will establish that we will use an interrupt service routine triggered by a button press to start the recording process. We also will define how the software in the AtMega328PB will interface with peripherals. This will require reading the datasheets of the various peripherals we have sourced and discussing how the AtMega can properly interface with them using polling/interrupts or serial communication. For hardware, we plan to draw a circuit schematic outlining all the wire connections between the AtMega328PB and peripherals.
+First, we outline our design in both software and hardware. For software, we discuss how each feature is implemented using software. For example, for recording audio, we establish that we use an interrupt service routine triggered by a button press to start the recording process. We also define how the software in the AtMega328PB interface with peripherals. This required reading the datasheets of the various peripherals we have sourced and discussing how the AtMega can properly interface with them using polling/interrupts or serial communication. For hardware, drew a circuit schematic outlining all the wire connections between the AtMega328PB and peripherals.
 
-Next, after the planning stage, we will implement one feature at a time. The first feature will be reading in audio using the microphone. The next feature will be providing real-time audio visualization through the LED strips (as the audio is being played into the microphone). Next, we will implement the recording and playback music feature. Each feature will hopefully take a few days to a week to implement. 
+Next, after the planning stage, we implemented one feature at a time. The first feature was reading in audio using the microphone. The next feature was providing real-time audio visualization through the LED Matrix (as the audio is being played into the microphone). Next, we implemented the recording and playback music feature. Each feature took a few days to a week to implement. 
 
-Finally, once all the features are implemented, we will start to integrate the components into the container that will house everything. This will involve a lot of testing and assembling. By the end, we should have a completed audio recording, amplifying, and playback speaker that provides cool visualization features.
+Finally, once all the features were implemented, we started to integrate the components into the container that housed everything. This involved a lot of testing and assembling. At the end, we succesfully completed audio recording, amplifying, and playback speaker that provides cool visualization features.
 
 ### 9. Components
 
-A microphone that can convert an audio signal into an electrical signal between 0V and 5V is needed to enable the AtMega328PB to read audio signals using its ADC. The microphone is preferably not too big (in the order of a few centimeters in size). Also, the microphone should be good quality, as in it can capture sounds with very high accuracy.
+A microphone that can convert an audio signal into an electrical signal between 0V and 5V was used to enable the AtMega328PB to read audio signals using its ADC. The microphone was small in size (in the order of a few centimeters in size). Also, the microphone was of a good quality, and captured sounds with a very high accuracy.
 
-Additionally, a speaker is needed to output amplified music. The speaker should be able to output high volume sounds (so the user can really immerse themselves). Also, the speaker should be of high quality for user enjoyment. The speaker needs to operate between 0 and 5V.
+Additionally, a speaker was used to output amplified music. The speaker was able to output high volume sounds (so the user can really immerse themselves). Also, the speaker was of a decent quality for user enjoyment. The speaker operated between 0 and 5V.
 
-Next, LED matrix will be used to provide music visualization. We plan to line up multiple LED strips to create a 2D screen of lights, which can then be programmed to output the corresponding audio signals in a cool way. The LED matrix should be able to interface with the ESP32, so we can program them to provide audio visualization functionality. 
+Next, LED matrix was used to provide music visualization. We used an LED Matrix to create a 2D screen of lights, which was programmed to output the corresponding audio signals in a brilliant way. The LED matrix was able to interface with the ESP32, that it can be droved by a microcontroller with a higher RAM Size. 
 
-The ESP32 chip used in Lab 4 will be utilized to allow the system to write data to the LED array.
+The ESP32 chip used in Lab 4 is utilized to allow the system to write data to the LED Matrix.
 
 ### 10. Evaluation
 
-The metric will be the sum of the below three metrics:
+The metric was the sum of the below three metrics:
 
-The first metric is audio visualization quality on a scale of 1-10. We want to make sure the audio visualization experience allows the user immerse themselves in the music in another dimension. While this can't be determined objectively, we can rank it on a scale of 1-10 based on the device playing songs that we like. We could also ask other people to play songs they like on the device and rank the visualization feature from 1 to 10.
+The first metric was audio visualization quality on a scale of 1-10. We wanted to make sure the audio visualization experience allows the user immerse themselves in the music in another dimension. While this can't be determined objectively, we rank it on a scale of 1-10 based on the device playing songs that we like. We also asked other people to play songs they like on the device and rank the visualization feature from 1 to 10.
 
-The second metric is sound quality on a scale of 1-10. We want to make sure the audio being outputted from the device is similar in quality to the audio being read through the microphone. Additionally, the sound should complement the audio visualization feature really well, which would mean that the audio quality needs to match the visualization quality. We will rank this on a scale of 1-10 based on the device playing songs that we like. Like the previous metric, we can ask other people to rank from sound quality from 1 to 10.
+The second metric was sound quality on a scale of 1-10. We wanted to make sure the audio being outputted from the device is similar in quality to the audio being read through the microphone. Additionally, the sound complemented the audio visualization feature really well, which meant that the audio quality matched the visualization quality. We ranked this on a scale of 1-10 based on the device playing songs that we like. Like the previous metric, we also ask other people to rank the sound quality from 1 to 10.
 
-The third and final metric is cost. While the device doesn't need to be extremely cheap, we want to make sure that the device is cheaper than most speakers. Therefore, we want the total price of the device to be less than 40 dollars.
+The third and final metric is cost. While the device doesn't need to be extremely cheap, we want to make sure that the device is cheaper than most speakers. Therefore, we want the total price of the device to be less than 100 US dollars.
 
-The one metric for evaluating our solution is the sum of these three metrics, where the cost metric is either 10 or 0 (10 if its under 40 dollars and 0 if its at 40 or over). Hopefully, we can achieve a metric of 30.
+The one metric for evaluating our solution is the sum of these three metrics, where the cost metric is either 10 or 0 (10 if its under 40 dollars and 0 if its at 40 or over).
 
 ### 11. Timeline
 
@@ -140,7 +140,7 @@ This section is to help guide your progress over the next few weeks. Feel free t
 
 ### 12. Proposal Presentation
 
-Add your slides to the Final Project Proposal slide deck in the Google Drive.
+
 
 https://docs.google.com/presentation/d/1Cn8vNzp07OBihLg25p4tsMr9FRUsMsbQ/edit?usp=sharing&ouid=101561420450155736831&rtpof=true&sd=true
 
