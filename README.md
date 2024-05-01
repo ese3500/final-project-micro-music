@@ -13,7 +13,7 @@
 
 ![image](https://github.com/ese3500/final-project-micro-music/assets/141350627/6d1c46c9-b75c-4a31-94e2-a3871cc74250)
 
-## Final Project Proposal
+## Final Project Proposal and Report
 
 ### 1. Abstract
 
